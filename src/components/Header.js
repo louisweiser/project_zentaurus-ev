@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image.js";
 
 import styles from "./Header.module.css";
@@ -13,7 +14,9 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
-        <h1>zentaurus-logo</h1>
+        <Link href="/">
+          <h1>zentaurus-logo</h1>
+        </Link>
         <button className={styles.button} onClick={onClickHandler}>
           <Image
             src="/menu.svg"
