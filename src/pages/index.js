@@ -1,8 +1,16 @@
 import Head from "next/head";
+
 import Header from "@/components/Header";
-import HomeContent from "@/components/Home";
 import Footer from "@/components/Footer";
-import ImageSlider from "@/components/ImageSlider";
+
+import ConsultationContent from "@/components/sections/Consultation";
+import AboutUsContent from "@/components/sections/AboutUs";
+import IntroductionContent from "@/components/sections/Introduction";
+import ApproachContent from "@/components/sections/Approach";
+import ProjectsContent from "@/components/sections/Projects";
+import BlogContent from "@/components/sections/Blog";
+import ContactContent from "@/components/sections/Contact";
+import DonateContent from "@/components/sections/Donate";
 
 export default function Home() {
   return (
@@ -13,8 +21,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <ImageSlider />
-      <HomeContent />
+      <IntroductionContent />
+      <AboutUsContent />
+      <ConsultationContent />
+      <ApproachContent />
+      <ProjectsContent />
+      <BlogContent />
+      <ContactContent />
+      <DonateContent />
       <Footer />
     </>
   );

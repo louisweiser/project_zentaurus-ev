@@ -1,8 +1,6 @@
-import Header from "@/components/Header";
+import { counselingText } from "../../../public/content/counseling.js";
 
-import { counselingText } from "../../public/content/counseling.js";
-
-export default function ConsultationPage() {
+export default function ConsultationContent() {
   const content = counselingText.map((subArray, index) => (
     <div key={index}>
       {subArray.map((text, subIndex) => {
@@ -15,10 +13,5 @@ export default function ConsultationPage() {
     </div>
   ));
 
-  return (
-    <>
-      <Header></Header>
-      {content}
-    </>
-  );
+  return content;
 }

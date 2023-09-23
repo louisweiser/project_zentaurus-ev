@@ -27,7 +27,7 @@ export default function Article({ topic, text, introduction }) {
   }
 
   return (
-    <article>
+    <article className={styles.article}>
       {topic && <h2>{topic}</h2>}
       <div className={styles["article-container"]}>{articleText}</div>
     </article>
