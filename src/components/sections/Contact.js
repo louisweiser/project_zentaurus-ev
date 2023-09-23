@@ -2,7 +2,7 @@ import { contactData, bankData } from "../../../public/content/contact";
 
 export default function ContactContent() {
   return (
-    <section>
+    <section id="bereich2">
       <article>
         <p>{contactData.name}</p>
         <p>{contactData.street}</p>

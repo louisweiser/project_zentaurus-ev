@@ -1,6 +1,7 @@
 import LinkContainer from "../LinkContainer";
 
 import { projectData } from "../../../public/content/project";
+import Link from "next/link";
 
 export default function ProjectsContent() {
   return (
@@ -8,7 +9,11 @@ export default function ProjectsContent() {
       <h1>Projekte</h1>
       {projectData.map((project, index) => (
         <div key={index}>
-          <LinkContainer project={project} />
+          <Link
+            href={"/projekt/" + project.name.toLowerCase().replace(/ /g, "")}
+          >
+            <LinkContainer project={project} />
+          </Link>
         </div>
       ))}
     </section>

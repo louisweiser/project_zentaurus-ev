@@ -1,9 +1,8 @@
 .component-container {
   display: flex;
-
   align-items: center;
   flex-direction: column;
-  align-items: row;
+  width: 100%;
   margin-top: 20px;
 }
 

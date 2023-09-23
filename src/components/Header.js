@@ -41,7 +41,7 @@ export default function Header() {
         </button>
         <ul className={styles.menuList}>
           <li>
-            <Link href="/ueberuns">Über uns</Link>
+            <a href="#bereich1">Über uns</a>
           </li>
           <li>
             <Link href="/beratung">Beratung</Link>
@@ -50,7 +50,7 @@ export default function Header() {
             <Link href="/projekte">Projekte</Link>
           </li>
           <li>
-            <Link href="/kontakt">Kontakt</Link>
+            <a href="#bereich2">Kontakt</a>
           </li>
           <li>
             <Link href="/spenden">Spenden</Link>
