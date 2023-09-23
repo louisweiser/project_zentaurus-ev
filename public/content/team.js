@@ -1,6 +1,6 @@
 export const teamData = [
   {
-    name: "Hr. Olaf Bagans",
+    name: "Olaf Bagans",
     image: "/team_olaf.jpeg",
     details: {
       title: "Vorstandsvorsitz, Projektmanagement",
@@ -11,7 +11,7 @@ export const teamData = [
     },
   },
   {
-    name: "Fr. Frida Rebien",
+    name: "Frida Rebien",
     image: "/team_frida.jpg",
     details: {
       title: "Fachlich therapeutische Leitung",

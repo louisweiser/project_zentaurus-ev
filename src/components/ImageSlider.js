@@ -68,9 +68,9 @@ function ImageSlider() {
             <div className={styles.imageContainer}>
               <Image
                 src={src}
-                alt={`Slide ${index}`}
-                width={375}
-                height={200}
+                alt={`Image ${index}`}
+                fill={true}
+                style={{ objectFit: "cover" }}
                 loading={"eager"}
               />
             </div>
