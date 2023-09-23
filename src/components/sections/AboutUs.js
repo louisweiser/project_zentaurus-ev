@@ -11,7 +11,6 @@ import { teamText } from "../../../public/content/team.js";
 
 export default function AboutUsContent() {
   function team() {
-    console.log(teamText);
     const lenght = teamText.length;
     const content = [];
     for (let i = 0; i < lenght; i++) {

@@ -1,5 +1,7 @@
 import { counselingText } from "../../../public/content/counseling.js";
 
+import styles from "./Consultation.module.css";
+
 export default function ConsultationContent() {
   const content = counselingText.map((subArray, index) => (
     <div key={index}>
@@ -13,5 +15,10 @@ export default function ConsultationContent() {
     </div>
   ));
 
-  return content;
+  return (
+    <section className={styles.section}>
+      <h2>Beratung</h2>
+      {content}
+    </section>
+  );
 }

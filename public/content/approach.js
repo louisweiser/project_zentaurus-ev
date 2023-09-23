@@ -1,5 +1,4 @@
 export const experienceText = [
-  "Erfahrungen",
   "Wir verbinden eigene Eltern-Betroffenenerfahrung mit modernem Wissen, lassen zunächst alles was in uns ist zu und geben Raum für Selbsterfahrung. Wir schlagen Brücken, damit es für Eltern möglich ist die Behinderung ihrer Kinder anzuerkennen um letztendlich am öffentlichen Leben teilnehmen zu können.",
   "Mit erfahrenem Wissen suchen wir Wege und Möglichkeiten uns gegenseitig in unseren  leidvollen und schmerzlichen Erfahrungen und Erlebnissen zu unterstützen und zu stärken.",
 ];
