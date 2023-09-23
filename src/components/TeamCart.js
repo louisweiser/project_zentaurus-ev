@@ -26,7 +26,7 @@ export const TeamCard = ({ member, onShowDetail }) => (
 
 export const DetailCard = ({ member, onHideDetail }) => (
   <div className={styles.detailCard}>
-    <div>
+    <div className={styles.de}>
       <h3>{member.name}</h3>
       <p>{member.details.title}</p>
       <p>{member.details.diploma}</p>
