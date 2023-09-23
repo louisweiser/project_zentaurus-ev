@@ -1,8 +1,7 @@
-/* TeamCart.module.css */
 .swipeableCard {
   position: relative;
-  width: 370px; /* Oder die gewünschte Breite */
-  height: 200px; /* Oder die gewünschte Höhe */
+  width: 100%;
+  height: 350px; /* Oder die gewünschte Höhe */
   overflow: hidden;
 }
 
@@ -15,7 +14,7 @@
   left: 0;
   transition: transform 300ms ease-in-out;
   display: flex;
-
+  padding: 0 60px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -44,10 +43,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #ffffff;
-  border: none;
   padding: 10px;
-  cursor: pointer;
 }
 
 .card .button {

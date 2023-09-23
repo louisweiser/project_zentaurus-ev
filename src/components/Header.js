@@ -19,7 +19,7 @@ export default function Header() {
         </Link>
         <button className={styles.button} onClick={onClickHandler}>
           <Image
-            src="/menu.svg"
+            src="/svgs/menu.svg"
             alt="open menu"
             className={styles.menuLogo}
             width={100}
@@ -31,7 +31,7 @@ export default function Header() {
       <div className={`${styles.menu} ${isMenuVisible ? styles.visible : ""}`}>
         <button className={styles.closeMenuButton} onClick={onClickHandler}>
           <Image
-            src="/xmark.svg"
+            src="/svgs/xmark.svg"
             alt="close menu"
             className={styles.menuLogo}
             width={100}

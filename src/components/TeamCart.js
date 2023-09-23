@@ -9,24 +9,38 @@ export const TeamCard = ({ member, onShowDetail }) => (
       src={"/images" + member.image}
       alt={member.name}
       width={200}
-      height={200}
+      height={300}
     />
     <h3>{member.name}</h3>
     <button className={styles.button} onClick={onShowDetail}>
-      Details
+      <Image
+        src="/svgs/chevronRight.svg"
+        alt="open details"
+        width={50}
+        height={24}
+        priority
+      ></Image>
     </button>
   </div>
 );
 
 export const DetailCard = ({ member, onHideDetail }) => (
   <div className={styles.detailCard}>
-    <h3>{member.name}</h3>
-    <p>{member.details.title}</p>
-    <p>{member.details.diploma}</p>
-    <p>{member.details.mail}</p>
-    <p>{member.details.mobil}</p>
+    <div>
+      <h3>{member.name}</h3>
+      <p>{member.details.title}</p>
+      <p>{member.details.diploma}</p>
+      <p>{member.details.mail}</p>
+      <p>{member.details.mobil}</p>
+    </div>
     <button className={styles.button} onClick={onHideDetail}>
-      Zurück
+      <Image
+        src="/svgs/chevronLeft.svg"
+        alt="close details"
+        width={50}
+        height={24}
+        priority
+      ></Image>
     </button>
   </div>
 );
