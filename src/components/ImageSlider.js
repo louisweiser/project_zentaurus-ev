@@ -71,6 +71,7 @@ function ImageSlider() {
                 alt={`Slide ${index}`}
                 width={375}
                 height={200}
+                loading={"eager"}
               />
             </div>
           </div>
