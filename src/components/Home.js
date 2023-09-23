@@ -5,23 +5,28 @@ import {
 
 import { stringArrayIntoJSX } from "@/utils.js";
 
+import styles from "./Home.module.css";
+
 export default function Home() {
   const phosophy = stringArrayIntoJSX(philosophyText);
+  const actWithAnminmals = stringArrayIntoJSX(actWithAnminmalsText);
 
   return (
     <>
-      <h1>Warum ist das Thema Inklusion für uns so wichtig ?</h1>
-      <h1>Jeder Mensch ist einzigartig - </h1>
-      <h1>... voneinander lernen bringt uns in der Gemeinschaft weiter! </h1>
+      <div className={styles.color}>
+        <h1>Warum ist das Thema Inklusion für uns so wichtig ?</h1>
+        <h1>Jeder Mensch ist einzigartig - </h1>
+        <h1>... voneinander lernen bringt uns in der Gemeinschaft weiter! </h1>
+      </div>
 
-      <section>
+      <article>
         <h2>Philosophie</h2>
-        {phosophy}
-      </section>
-      <section>
+        <div className={styles.color}>{phosophy}</div>
+      </article>
+      <article>
         <h2>Unser Vorgehen</h2>
-        {actWithAnminmalsText}
-      </section>
+        <div className={styles.color}>{actWithAnminmals}</div>
+      </article>
     </>
   );
 }

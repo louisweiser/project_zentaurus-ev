@@ -12,12 +12,15 @@ export default function ueberuns() {
     <div>
       <Header></Header>
       <section>
+        <h2>Über Uns</h2>
+        {aboutUs}
+      </section>
+      <section>
         <h2>Der Verein</h2>
         {union}
       </section>
       <section>
-        <h2>Über Uns</h2>
-        {aboutUs}
+        <h2>Das Team</h2>
       </section>
     </div>
   );

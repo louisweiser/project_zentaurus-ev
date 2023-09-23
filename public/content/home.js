@@ -13,5 +13,7 @@ export const philosophyText = [
   "Bindungen, gegenseitige Akzeptanz, Mitgefühl sind die Grundsteine dafür, dass jeder sein volles Potential entfalten kann, sich in einer Gruppe aufgehoben fühlt – ganz egal ob die „Macken“ sichtbar sind oder im Verborgenen liegen. Jeder Mensch verfügt über Starken und Schwächen; es gilt sie herauszufinden um Stärken jedes einzelnen nutzen zu können und Schwächen zu kompensieren.",
 ];
 
-export const actWithAnminmalsText =
-  "In unserer Arbeit spielen Pferde, Hasen, Kater und Hunde eine große Rolle. Sie treten Menschen unvoreingenommen gegenüber.  Sie interessieren sich nicht für die Eigenheiten eines Menschen und spiegeln nur, wie es eben ist. Manchmal sind sie ein Bindeglied, wenn ein Kontakt auf Grund von gelebten Erfahrungen von Mensch zu Mensch nicht mehr möglich ist.";
+export const actWithAnminmalsText = [
+  "In unserer Arbeit spielen Pferde, Hasen, Kater und Hunde eine große Rolle. Sie treten Menschen unvoreingenommen gegenüber.  Sie interessieren sich nicht für die Eigenheiten eines Menschen und spiegeln nur, wie es eben ist. Manchmal sind sie ein Bindeglied, wenn ein Kontakt auf Grund von gelebten Erfahrungen von Mensch zu Mensch nicht mehr möglich ist.",
+  "Humanes Zusammenleben, Integration, braucht zuerst und vor allem Raum in den Köpfen und Herzen der Menschen.",
+];

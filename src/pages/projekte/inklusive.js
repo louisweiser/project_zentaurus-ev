@@ -1,5 +1,9 @@
-import React from "react";
+import Header from "@/components/Header";
 
-export default function inklusive() {
-  return <div>inklusive</div>;
+export default function beratung() {
+  return (
+    <>
+      <Header></Header>
+    </>
+  );
 }

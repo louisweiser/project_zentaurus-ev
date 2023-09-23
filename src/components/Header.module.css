@@ -1,9 +1,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #add8e6;
+  background-color: #fffacd;
   height: 70px;
 }
+/*add8e6 - das schöne hellblau*/
 
 .closeMenuButton {
   position: fixed;

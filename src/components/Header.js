@@ -15,7 +15,7 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <Link href="/">
-          <h1>zentaurus-logo</h1>
+          <h1>logo</h1>
         </Link>
         <button className={styles.button} onClick={onClickHandler}>
           <Image
@@ -40,11 +40,21 @@ export default function Header() {
           ></Image>
         </button>
         <ul className={styles.menuList}>
-          <li>Über uns</li>
-          <li>Projekte</li>
-          <li>Veranstaltungen</li>
-          <li>Kontakt</li>
-          <li>Spenden</li>
+          <li>
+            <Link href="/ueberuns">Über uns</Link>
+          </li>
+          <li>
+            <Link href="/beratung">Beratung</Link>
+          </li>
+          <li>
+            <Link href="/projekte">Projekte</Link>
+          </li>
+          <li>
+            <Link href="/kontakt">Kontakt</Link>
+          </li>
+          <li>
+            <Link href="/spenden">Spenden</Link>
+          </li>
         </ul>
       </div>
     </>
