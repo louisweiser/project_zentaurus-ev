@@ -10,7 +10,6 @@ import ApproachContent from "@/components/sections/Approach";
 import ProjectsContent from "@/components/sections/Projects";
 import BlogContent from "@/components/sections/Blog";
 import ContactContent from "@/components/sections/Contact";
-import DonateContent from "@/components/sections/Donate";
 
 export default function Home() {
   return (
@@ -28,7 +27,6 @@ export default function Home() {
       <ProjectsContent />
       <BlogContent />
       <ContactContent />
-      <DonateContent />
       <Footer />
     </>
   );

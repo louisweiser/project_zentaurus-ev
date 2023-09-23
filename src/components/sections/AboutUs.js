@@ -2,12 +2,15 @@ import Article from "../Article.js";
 
 import {
   philosophyText,
-  actWithAnminmalsText,
   aboutUsText,
   unionText,
 } from "../../../public/content/aboutus.js";
 
-import { teamText } from "../../../public/content/team.js";
+import { teamData } from "../../../public/content/team.js";
+
+import TeamCart from "../TeamCart.js";
+
+import styles from "./AboutUs.module.css";
 
 export default function AboutUsContent() {
   function team() {
@@ -29,14 +32,17 @@ export default function AboutUsContent() {
 
   return (
     <section>
-      <Article topic="Über Uns" text={aboutUsText}></Article>
-      <Article topic="Der Verein" text={unionText}></Article>
-      <Article topic="Philosophie" text={philosophyText}></Article>
-      <Article topic="Unser Vorgehen" text={actWithAnminmalsText}></Article>
+      <Article title="Über Uns" text={aboutUsText}></Article>
+      <Article title="Der Verein" text={unionText}></Article>
+      <Article title="Philosophie" text={philosophyText}></Article>
       <article>
         <h2>Das Team</h2>
+        <div className={styles.container}>
+          {teamData.map((member) => (
+            <TeamCart key={member.name} member={member} />
+          ))}
+        </div>
       </article>
-      {team()}
     </section>
   );
 }

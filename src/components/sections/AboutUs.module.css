@@ -8,3 +8,7 @@
 .section {
   padding: 5px;
 }
+
+.container {
+  width: 100%;
+}

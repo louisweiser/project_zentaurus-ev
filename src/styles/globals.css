@@ -107,3 +107,8 @@ button {
     color-scheme: dark;
   }
 }
+
+h2 {
+  display: flex;
+  justify-content: center;
+}

@@ -11,7 +11,7 @@ export function stringArrayIntoJSX(arrayOfStrings) {
   return convertedText;
 }
 
-export default function Article({ topic, text, introduction }) {
+export default function Article({ title, text, introduction }) {
   const articleText = stringArrayIntoJSX(text);
 
   if (introduction) {
@@ -28,8 +28,10 @@ export default function Article({ topic, text, introduction }) {
 
   return (
     <article className={styles.article}>
-      {topic && <h2>{topic}</h2>}
-      <div className={styles["article-container"]}>{articleText}</div>
+      <div className={styles["article-container"]}>
+        {title && <h2>{title}</h2>}
+        {articleText}
+      </div>
     </article>
   );
 }

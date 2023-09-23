@@ -1,0 +1,59 @@
+/* TeamCart.module.css */
+.swipeableCard {
+  position: relative;
+  width: 370px; /* Oder die gewünschte Breite */
+  height: 200px; /* Oder die gewünschte Höhe */
+  overflow: hidden;
+}
+
+.card,
+.detailCard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: transform 300ms ease-in-out;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  transform: translateX(0);
+  z-index: 1000; /* Stellen Sie sicher, dass die Karte über der Detailkarte liegt */
+}
+
+.detailCard {
+  transform: translateX(100%);
+  z-index: 0;
+}
+
+.showDetail .card {
+  transform: translateX(-100%);
+}
+
+.showDetail .detailCard {
+  transform: translateX(0);
+}
+
+/* TeamCart.module.css */
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card .button {
+  right: 0;
+}
+
+.detailCard .button {
+  left: 0;
+}
