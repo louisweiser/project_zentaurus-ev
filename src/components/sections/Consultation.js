@@ -20,7 +20,7 @@ export default function ConsultationContent() {
   ));
 
   return (
-    <section className={styles.section} id="bereich3" ref={sectionRefs[2]}>
+    <section className={styles.section} id="section3" ref={sectionRefs[2]}>
       <h2>Beratung</h2>
       {content}
     </section>

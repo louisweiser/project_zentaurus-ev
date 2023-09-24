@@ -34,7 +34,7 @@ export default function AboutUsContent() {
   }
 
   return (
-    <section id="bereich2" ref={sectionRefs[1]}>
+    <section id="section2" ref={sectionRefs[1]}>
       <Article title="Über Uns" text={aboutUsText}></Article>
       <Article title="Der Verein" text={unionText}></Article>
       <Article title="Philosophie" text={philosophyText}></Article>
