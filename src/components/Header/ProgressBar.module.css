@@ -1,8 +1,14 @@
-.bar {
-  display: flex;
+.progressBarContainer {
   position: fixed;
-  top: 66px;
-  height: 4px;
-  z-index: 1000;
+  top: 70px;
+  left: 0;
   width: 100%;
+  height: 5px; /* oder die gewünschte Höhe */
+  background-color: #e0e0e0; /* Hintergrundfarbe des Containers */
+  z-index: 1000; /* oder ein anderer Wert, um sicherzustellen, dass der Balken über anderen Elementen angezeigt wird */
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #76c7c0; /* oder die gewünschte Farbe des Balkens */
 }

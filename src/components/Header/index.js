@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
+import { SectionRefsContext } from "@/pages/_app";
 
 import HeaderMenu from "./Menu.js";
 import ProgressBar from "./ProgressBar.js";
@@ -8,8 +9,10 @@ import styles from "./index.module.css";
 
 export default function Header() {
   const [isMenuVisible, setMenuVisible] = useState(false);
-
+  const [currentSection, setCurrentSection] = useState(null);
   const [headline, setHeadline] = useState("default Headline");
+
+  const sectionRefs = useContext(SectionRefsContext);
 
   const onClickHandler = () => {
     setMenuVisible(!isMenuVisible);
@@ -26,6 +29,37 @@ export default function Header() {
       setIsAnimating(false);
     }, 500); // 1000ms = 1s, die Dauer der Fade-Out-Animation
   }
+
+  useEffect(() => {
+    console.log(sectionRefs);
+    if (!sectionRefs.current || sectionRefs.current.length === 0) {
+      console.log("fail");
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("Eintritt:", entry.target.id);
+            setCurrentSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    sectionRefs.current.forEach(
+      (ref) => ref.current && observer.observe(ref.current)
+    );
+
+    return () => {
+      sectionRefs.current.forEach(
+        (ref) => ref.current && observer.unobserve(ref.current)
+      );
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
