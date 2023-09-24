@@ -10,9 +10,12 @@ import { teamData } from "../../../public/content/team.js";
 
 import TeamCart from "../TeamCart.js";
 
+import { useSectionRefs } from "@/pages/_app.js";
+
 import styles from "./AboutUs.module.css";
 
 export default function AboutUsContent() {
+  const sectionRefs = useSectionRefs();
   function team() {
     const lenght = teamText.length;
     const content = [];
@@ -31,7 +34,7 @@ export default function AboutUsContent() {
   }
 
   return (
-    <section id="bereich1">
+    <section id="bereich2" ref={sectionRefs[1]}>
       <Article title="Über Uns" text={aboutUsText}></Article>
       <Article title="Der Verein" text={unionText}></Article>
       <Article title="Philosophie" text={philosophyText}></Article>

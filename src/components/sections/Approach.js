@@ -6,9 +6,13 @@ import {
   comminityText,
 } from "../../../public/content/approach.js";
 
+import { useSectionRefs } from "@/pages/_app.js";
+
 export default function ApproachContent() {
+  const sectionRefs = useSectionRefs();
+
   return (
-    <section>
+    <section id="section4" ref={sectionRefs[3]}>
       <h1>Vorgehen</h1>
       <Article title="Erfahrungen" text={experienceText}></Article>
       <Article title="Tiere" text={actWithAnminmalsText}></Article>

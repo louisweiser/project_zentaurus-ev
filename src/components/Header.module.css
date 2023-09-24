@@ -1,15 +1,21 @@
 .header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #fffacd;
   height: 70px;
+  width: 100%;
+  z-index: 10000;
 }
 /*add8e6 - das schöne hellblau*/
 
-.closeMenuButton {
+.button {
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 0px;
+  top: 0px;
+  height: 70px;
 }
 
 .menu {
@@ -32,4 +38,13 @@
 .menuList {
   margin-top: 70px;
   padding-left: 30px;
+}
+
+.bar {
+  display: flex;
+  position: fixed;
+  top: 66px;
+  height: 4px;
+  z-index: 1000000;
+  width: 100%;
 }

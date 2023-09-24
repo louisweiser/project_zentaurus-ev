@@ -112,3 +112,7 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+main {
+  padding-top: 70px;
+}
