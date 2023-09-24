@@ -18,3 +18,31 @@
   height: 70px;
   z-index: 21000000;
 }
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 0.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOutAnimation 0.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  to {
+    opacity: 0;
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  color: black;
+  padding-left: 30px;
+}

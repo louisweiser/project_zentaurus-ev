@@ -9,13 +9,34 @@ import styles from "./index.module.css";
 export default function Header() {
   const [isMenuVisible, setMenuVisible] = useState(false);
 
+  const [headline, setHeadline] = useState("default Headline");
+
   const onClickHandler = () => {
     setMenuVisible(!isMenuVisible);
   };
 
+  const Headlines = ["headline1", "headline2", "headline3", "headline4"];
+
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  function newHeadline(newHeadline) {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setHeadline(newHeadline);
+      setIsAnimating(false);
+    }, 500); // 1000ms = 1s, die Dauer der Fade-Out-Animation
+  }
+
   return (
     <header className={styles.header}>
-      <h1 className={styles.headline}>Headline</h1>
+      <h1
+        className={`${styles.headline} ${
+          isAnimating ? styles.fadeOut : styles.fadeIn
+        }`}
+        key={headline}
+      >
+        {headline}
+      </h1>
       <button className={styles.button} onClick={onClickHandler}>
         <Image
           src="/svgs/menu.svg"
@@ -26,7 +47,7 @@ export default function Header() {
           priority
         />
       </button>
-      <ProgressBar />
+      <ProgressBar newHeadline={newHeadline} />
       <HeaderMenu
         onClickHandler={onClickHandler}
         isMenuVisible={isMenuVisible}
