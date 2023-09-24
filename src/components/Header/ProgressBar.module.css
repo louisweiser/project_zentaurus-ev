@@ -1,0 +1,8 @@
+.bar {
+  display: flex;
+  position: fixed;
+  top: 66px;
+  height: 4px;
+  z-index: 1000;
+  width: 100%;
+}
