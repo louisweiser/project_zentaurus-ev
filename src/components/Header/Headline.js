@@ -35,11 +35,10 @@ export default function Headline() {
 
     setIsAnimating(true);
 
-    if (headline !== "") {
-      setTimeout(() => {
-        setHeadline("");
-      }, 400);
-    }
+    setTimeout(() => {
+      setHeadline("");
+      setIsAnimating(false);
+    }, 500);
 
     if (timeoutId) clearTimeout(timeoutId);
 
@@ -53,7 +52,7 @@ export default function Headline() {
 
       setHeadline(Headlines[num - 1]);
       setIsAnimating(false);
-    }, 400); // Dauer der Fade-Out-Animation
+    }, 500); // Dauer der Fade-Out-Animation
 
     setTimeoutId(id);
   }
@@ -64,7 +63,6 @@ export default function Headline() {
         entries.forEach((entry) => {
           // Überprüfen, ob der oberste Rand des Elements den oberen Rand des Viewports erreicht hat
           if (entry.boundingClientRect.top <= 0 && entry.isIntersecting) {
-            console.log(entry.target.id, "id");
             setCurrentSection(entry.target.id);
             setNewHeadline(entry.target.id);
           }
