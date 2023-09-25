@@ -69,7 +69,12 @@ export default function Header() {
         }`}
         key={headline}
       >
-        {headline}
+        <Image
+          src={"/images/logo.png"}
+          alt="logo"
+          height={64}
+          width={64}
+        ></Image>
       </h1>
       <button className={styles.button} onClick={onClickHandler}>
         <Image
