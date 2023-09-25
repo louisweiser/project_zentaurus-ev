@@ -1,7 +1,7 @@
 .swipeableCard {
   position: relative;
   width: 100%;
-  height: 350px; /* Oder die gewünschte Höhe */
+  height: 350px;
   overflow: hidden;
 }
 
@@ -22,7 +22,7 @@
 
 .card {
   transform: translateX(0);
-  z-index: 1000; /* Stellen Sie sicher, dass die Karte über der Detailkarte liegt */
+  z-index: 1000;
 }
 
 .detailCard {
@@ -38,7 +38,6 @@
   transform: translateX(0);
 }
 
-/* TeamCart.module.css */
 .button {
   position: absolute;
   top: 50%;
@@ -52,4 +51,9 @@
 
 .detailCard .button {
   left: 0;
+}
+
+.image {
+  border-radius: 20px;
+  object-fit: cover;
 }

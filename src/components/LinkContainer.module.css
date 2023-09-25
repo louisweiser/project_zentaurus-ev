@@ -15,6 +15,7 @@
 .text {
   width: calc(100% - 20px);
   background-color: black;
+  color: white;
   padding: 20px 0;
   text-align: center;
 }

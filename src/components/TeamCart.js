@@ -10,6 +10,8 @@ export const TeamCard = ({ member, onShowDetail }) => (
       alt={member.name}
       width={200}
       height={300}
+      className={styles.image}
+      priority
     />
     <h3>{member.name}</h3>
     <button className={styles.button} onClick={onShowDetail}>
