@@ -9,9 +9,11 @@ import styles from "./index.module.css";
 
 export default function Header() {
   const [isMenuVisible, setMenuVisible] = useState(false);
+  const [isRotated, setRotated] = useState(false);
 
   const onClickHandler = () => {
     setMenuVisible(!isMenuVisible);
+    setRotated(!isRotated);
   };
 
   return (
@@ -21,7 +23,9 @@ export default function Header() {
         <Image
           src="/svgs/menu.svg"
           alt="open menu"
-          className={styles.menuLogo}
+          className={`${styles.menuLogo} ${
+            isRotated ? styles.rotate : styles.rotateBack
+          }`}
           width={100}
           height={24}
           priority
