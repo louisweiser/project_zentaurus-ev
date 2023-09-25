@@ -1,0 +1,16 @@
+.section-container {
+  padding-top: 70px;
+  min-height: 100vh;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: calc(100vh - 360px);
+  padding: 0 20px 50px 20px;
+  gap: 14px;
+  color: black;
+  font-size: 5vw;
+}

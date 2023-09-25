@@ -16,4 +16,5 @@
   width: calc(100% - 20px);
   background-color: black;
   padding: 20px 0;
+  text-align: center;
 }

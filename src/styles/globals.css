@@ -87,7 +87,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #ff6f61;
+  background: #f5f5dc;
 }
 
 a {
@@ -106,13 +106,4 @@ button {
   html {
     color-scheme: dark;
   }
-}
-
-h2 {
-  display: flex;
-  justify-content: center;
-}
-
-main {
-  padding-top: 70px;
 }

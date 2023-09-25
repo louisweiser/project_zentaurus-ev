@@ -1,13 +1,19 @@
 .article-container {
   background-color: #f5f5dc;
   color: #333333;
-  padding: 10px;
+  padding: 13px;
 }
 
 .paragraph {
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .article {
   margin: 20px 0;
+}
+
+.headline {
+  font-size: 2rem;
+  padding: 30px 0;
+  margin-left: 10px;
 }
