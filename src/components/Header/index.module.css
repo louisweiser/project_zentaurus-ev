@@ -42,8 +42,13 @@
 }
 
 .headline {
-  display: flex;
-  align-items: center;
   color: black;
-  padding-left: 30px;
+  padding-left: 20px;
+  font-size: 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
 }

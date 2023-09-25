@@ -16,9 +16,9 @@ export default function IntroductionContent() {
     >
       <ImageSlider />
       <article className={styles["article-container"]}>
-        <h1>Warum ist das Thema Inklusion für uns so wichtig ?</h1>
-        <h1>Jeder Mensch ist einzigartig - </h1>
-        <h1>... voneinander lernen bringt uns in der Gemeinschaft weiter!</h1>
+        <p>{introductionText[0]}</p>
+        <p>{introductionText[1]}</p>
+        <p>{introductionText[2]}</p>
       </article>
     </section>
   );
