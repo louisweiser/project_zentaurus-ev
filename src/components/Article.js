@@ -19,7 +19,7 @@ export default function Article({ title, text, subtitle }) {
       <div className={styles["article-container"]}>
         {title && <h2 className={styles.title}>{title}</h2>}
         {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
-        {articleText}
+        <div className={styles.text}>{articleText}</div>
       </div>
     </article>
   );

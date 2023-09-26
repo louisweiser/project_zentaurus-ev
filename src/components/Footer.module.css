@@ -4,6 +4,10 @@
   list-style: none;
   padding: 20px 0;
   margin-top: 40px;
-  background-color: #b22222;
+  background-color: #f0a04b;
   height: 100vw;
+}
+
+.color {
+  color: #fefbe9;
 }

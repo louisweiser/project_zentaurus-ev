@@ -6,7 +6,9 @@ export default function Footer() {
   return (
     <ul className={styles.list}>
       <li>
-        <Link href={"impressum"}>Impressum</Link>
+        <Link href={"impressum"} className={styles.color}>
+          Impressum
+        </Link>
       </li>
     </ul>
   );
