@@ -11,11 +11,11 @@ function stringArrayIntoJSX(arrayOfStrings) {
   return convertedText;
 }
 
-export default function Article({ title, text, subtitle }) {
+export default function Article({ title, text, subtitle, colored }) {
   const articleText = stringArrayIntoJSX(text);
 
   return (
-    <article className={styles.article}>
+    <article className={`${styles.article} ${colored ? styles.color : ""}`}>
       <div className={styles["article-container"]}>
         {title && <h2 className={styles.title}>{title}</h2>}
         {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}

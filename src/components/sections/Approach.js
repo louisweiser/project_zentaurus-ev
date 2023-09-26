@@ -15,9 +15,21 @@ export default function ApproachContent() {
   return (
     <section id="section4" ref={sectionRefs[3]}>
       <SectionTitle title="Vorgehen" />
-      <Article text={experienceText}></Article>
-      <Article subtitle="Tiere" text={actWithAnminmalsText}></Article>
-      <Article subtitle="Gemeinschaft" text={comminityText}></Article>
+      <Article
+        subtitle="Erfahrung"
+        text={experienceText}
+        colored={true}
+      ></Article>
+      <Article
+        subtitle="Tiere"
+        text={actWithAnminmalsText}
+        colored={true}
+      ></Article>
+      <Article
+        subtitle="Gemeinschaft"
+        text={comminityText}
+        colored={true}
+      ></Article>
     </section>
   );
 }

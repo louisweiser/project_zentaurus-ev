@@ -1,4 +1,8 @@
 .section {
   background-color: #e1eedd;
-  padding: 10px;
+  padding: 16px;
+}
+
+.list {
+  padding: 20px;
 }

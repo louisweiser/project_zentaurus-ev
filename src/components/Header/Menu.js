@@ -34,12 +34,12 @@ export default function HeaderMenu(props) {
         </li>
         <li>
           <a href="#section7" onClick={onClickHandler}>
-            Kontakt
+            Spenden
           </a>
         </li>
         <li>
-          <a href="#section7" onClick={onClickHandler}>
-            Spenden
+          <a href="#section8" onClick={onClickHandler}>
+            Kontakt
           </a>
         </li>
       </ul>

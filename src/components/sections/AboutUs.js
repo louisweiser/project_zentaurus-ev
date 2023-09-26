@@ -20,9 +20,13 @@ export default function AboutUsContent() {
   return (
     <section id="section2" ref={sectionRefs[1]}>
       <SectionTitle title="Über Uns" />
-      <Article text={aboutUsText}></Article>
-      <Article subtitle="Der Verein" text={unionText}></Article>
-      <Article subtitle="Philosophie" text={philosophyText}></Article>
+      <Article text={aboutUsText} colored={true}></Article>
+      <Article subtitle="Der Verein" text={unionText} colored={true}></Article>
+      <Article
+        subtitle="Philosophie"
+        text={philosophyText}
+        colored={true}
+      ></Article>
       <article>
         <h3 className={styles.subtitle}>Das Team</h3>
         <div className={styles.container}>
