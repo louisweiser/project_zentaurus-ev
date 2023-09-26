@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useRef } from "react";
 
 import "@/styles/globals.css";
+import "../../public/fonts/index.css";
 
 export const SectionRefsContext = createContext();
 

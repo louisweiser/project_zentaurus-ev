@@ -1,0 +1,8 @@
+@font-face {
+  font-display: swap;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./lato-v24-latin-regular.woff2") format("woff2"),
+    url("./lato-v24-latin-regular.ttf") format("truetype");
+}
