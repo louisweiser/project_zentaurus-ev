@@ -4,13 +4,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ff6f61;
+  background-color: #f6c453;
   height: 70px;
   width: 100%;
   z-index: 21000000;
 }
 /*add8e6 - das schöne hellblau*/
-/* first header #fffacd*/
+/* first header #fffacd secound #ff6f61*/
 
 .button {
   position: fixed;

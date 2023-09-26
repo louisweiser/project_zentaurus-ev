@@ -79,7 +79,7 @@
   margin: 0;
 
   font-family: "Lato";
-  color: black;
+  color: #183a1d;
 }
 
 html,
@@ -90,9 +90,9 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #f5f5dc;
+  background: #fefbe9;
 }
-
+/*f5f5dc creme*/
 a {
   color: inherit;
   text-decoration: none;
