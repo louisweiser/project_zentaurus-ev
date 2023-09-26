@@ -9,6 +9,7 @@ import {
 import { teamData } from "../../../public/content/team.js";
 
 import TeamCart from "../TeamCart.js";
+import SectionTitle from "../SectionTitle.js";
 
 import { useSectionRefs } from "@/pages/_app.js";
 
@@ -35,11 +36,12 @@ export default function AboutUsContent() {
 
   return (
     <section id="section2" ref={sectionRefs[1]}>
-      <Article title="Über Uns" text={aboutUsText}></Article>
-      <Article title="Der Verein" text={unionText}></Article>
-      <Article title="Philosophie" text={philosophyText}></Article>
+      <SectionTitle title="Über Uns" />
+      <Article text={aboutUsText}></Article>
+      <Article subtitle="Der Verein" text={unionText}></Article>
+      <Article subtitle="Philosophie" text={philosophyText}></Article>
       <article>
-        <h2>Das Team</h2>
+        <h3 className={styles.subtitle}>Das Team</h3>
         <div className={styles.container}>
           {teamData.map((member) => (
             <TeamCart key={member.name} member={member} />

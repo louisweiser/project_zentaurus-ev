@@ -1,22 +1,23 @@
+import { useSectionRefs } from "@/pages/_app.js";
+import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
-
 import {
   experienceText,
   actWithAnminmalsText,
   comminityText,
 } from "../../../public/content/approach.js";
 
-import { useSectionRefs } from "@/pages/_app.js";
+import styles from "./Approach.module.css";
 
 export default function ApproachContent() {
   const sectionRefs = useSectionRefs();
 
   return (
     <section id="section4" ref={sectionRefs[3]}>
-      <h1>Vorgehen</h1>
-      <Article title="Erfahrungen" text={experienceText}></Article>
-      <Article title="Tiere" text={actWithAnminmalsText}></Article>
-      <Article title="Gemeinschaft" text={comminityText}></Article>
+      <SectionTitle title="Vorgehen" />
+      <Article subtitle="Erfahrungen" text={experienceText}></Article>
+      <Article subtitle="Tiere" text={actWithAnminmalsText}></Article>
+      <Article subtitle="Gemeinschaft" text={comminityText}></Article>
     </section>
   );
 }

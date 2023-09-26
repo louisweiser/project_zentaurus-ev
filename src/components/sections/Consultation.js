@@ -1,8 +1,8 @@
+import { useSectionRefs } from "@/pages/_app.js";
+import SectionTitle from "../SectionTitle.js";
 import { counselingText } from "../../../public/content/counseling.js";
 
 import styles from "./Consultation.module.css";
-
-import { useSectionRefs } from "@/pages/_app.js";
 
 export default function ConsultationContent() {
   const sectionRefs = useSectionRefs();
@@ -21,7 +21,7 @@ export default function ConsultationContent() {
 
   return (
     <section className={styles.section} id="section3" ref={sectionRefs[2]}>
-      <h2>Beratung</h2>
+      <SectionTitle title="Beratung" />
       {content}
     </section>
   );
