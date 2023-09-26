@@ -1,29 +1,59 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 import styles from "./TeamCard.module.css";
 
-const FrontCard = ({ member, onShowDetail }) => (
-  <button className={styles.frontCard} onClick={onShowDetail}>
-    <Image
-      src={"/images" + member.image}
-      alt={member.name}
-      width={200}
-      height={300}
-      className={styles.image}
-      priority
-    />
-    <p>{member.name}</p>
-    <Image
-      src="/svgs/chevronRight.svg"
-      alt="open details"
-      width={50}
-      height={24}
-      className={`${styles.button} ${styles.right}`}
-      priority
-    ></Image>
-  </button>
-);
+const FrontCard = ({ member, onShowDetail }) => {
+  const frontCardRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.animate);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (frontCardRef.current) {
+      observer.observe(frontCardRef.current);
+    }
+
+    return () => {
+      if (frontCardRef.current) {
+        observer.unobserve(frontCardRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div className={styles.popInWrapper} ref={frontCardRef}>
+      <button className={styles.frontCard} onClick={onShowDetail}>
+        <Image
+          src={"/images" + member.image}
+          alt={member.name}
+          width={200}
+          height={300}
+          className={styles.image}
+          priority
+        />
+        <p>{member.name}</p>
+        <Image
+          src="/svgs/chevronRight.svg"
+          alt="open details"
+          width={50}
+          height={24}
+          className={`${styles.button} ${styles.right}`}
+          priority
+        ></Image>
+      </button>
+    </div>
+  );
+};
 
 const BackCard = ({ member, onHideDetail }) => (
   <button className={styles.backCard} onClick={onHideDetail}>
@@ -45,7 +75,7 @@ const BackCard = ({ member, onHideDetail }) => (
   </button>
 );
 
-export default function TeamCard({ member }) {
+export default function TeamCard({ member, isOpen, onToggle }) {
   const [showDetail, setShowDetail] = useState(false);
   const startTouch = useRef();
 
@@ -66,7 +96,10 @@ export default function TeamCard({ member }) {
     <div
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      className={`${styles.memberCard} ${showDetail ? styles.showDetail : ""}`}
+      onClick={onToggle}
+      className={`${styles.memberCard} ${
+        showDetail && isOpen ? styles.showDetail : ""
+      }`}
     >
       <FrontCard member={member} onShowDetail={() => setShowDetail(true)} />
       <BackCard member={member} onHideDetail={() => setShowDetail(false)} />
