@@ -15,6 +15,7 @@ export default function IntroductionContent() {
       className={styles["section-container"]}
     >
       <ImageSlider />
+
       <article className={styles["article-container"]}>
         <ul className={styles.quote}>
           <li>{introductionText[0]}</li>

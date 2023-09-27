@@ -73,6 +73,7 @@ function ImageSlider() {
                 style={{ objectFit: "cover" }}
                 loading={"eager"}
               />
+              <div className={styles.overlay}></div>
             </div>
           </div>
         ))}
