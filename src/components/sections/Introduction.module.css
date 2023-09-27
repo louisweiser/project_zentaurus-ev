@@ -4,12 +4,31 @@
 }
 
 .article-container {
+  height: calc(100vh - 360px);
+  padding: 20px 20px 0 20px;
+}
+
+.quote {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  height: calc(100vh - 360px);
-  padding: 0 20px 50px 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   gap: 14px;
+  list-style: none;
   font-size: 5vw;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

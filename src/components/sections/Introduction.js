@@ -16,9 +16,11 @@ export default function IntroductionContent() {
     >
       <ImageSlider />
       <article className={styles["article-container"]}>
-        <p>{introductionText[0]}</p>
-        <p>{introductionText[1]}</p>
-        <p>{introductionText[2]}</p>
+        <ul className={styles.quote}>
+          <li>{introductionText[0]}</li>
+          <li>{introductionText[1]}</li>
+          <li>{introductionText[2]}</li>
+        </ul>
       </article>
     </section>
   );
