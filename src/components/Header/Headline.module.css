@@ -22,6 +22,10 @@
 .headline {
   padding-left: 20px;
   font-size: 1.5rem;
+  font-family: "Merriweather";
+  font-weight: 400;
+  padding-top: 3px;
+  color: #24251f;
 }
 
 .header-content {

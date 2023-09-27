@@ -12,13 +12,13 @@ export default function ProjectsContent() {
     <section id="section5" ref={sectionRefs[4]}>
       <SectionTitle title="Projekte" />
       {projectData.map((project, index) => (
-        <div key={index}>
+        <article key={index}>
           <Link
             href={"/projekt/" + project.name.toLowerCase().replace(/ /g, "")}
           >
             <LinkContainer project={project} />
           </Link>
-        </div>
+        </article>
       ))}
     </section>
   );
