@@ -7,24 +7,36 @@
 
 .sliderInner {
   display: flex;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .slide {
   flex: 0 0 auto;
   width: 100%;
   height: 270px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
 
 .imageContainer {
   position: relative;
   width: 100%;
   height: 270px;
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prevButton {
+  left: 10px;
+}
+.nextButton {
+  right: 10px;
 }
 
 .overlay {
@@ -37,6 +49,6 @@
   pointer-events: none;
 }
 
-.slide.active {
-  opacity: 1;
+.imageContainer {
+  position: relative;
 }
