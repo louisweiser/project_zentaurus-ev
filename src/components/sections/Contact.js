@@ -66,10 +66,7 @@ export default function ContactContent() {
 
   const handleMapClick = () => {
     const address = "Zentaurus e.V., Ringstraße, Oberbarnim";
-    window.open(
-      `https://www.google.com/maps?q=${encodeURIComponent(address)}`,
-      "_blank"
-    );
+    window.location.href = `geo:0,0?q=${encodeURIComponent(address)}`;
   };
 
   return (
