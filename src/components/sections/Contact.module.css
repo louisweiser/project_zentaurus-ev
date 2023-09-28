@@ -1,0 +1,18 @@
+.section {
+  margin-bottom: 120px;
+}
+
+.contact {
+  background-color: #e1eedd;
+  padding: 20px;
+}
+
+.list {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.map {
+  border-top: #183a1d 1px solid;
+  border-bottom: #183a1d 1px solid;
+}

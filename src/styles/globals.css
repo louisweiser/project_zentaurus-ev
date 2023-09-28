@@ -111,3 +111,7 @@ button {
     color-scheme: dark;
   }
 }
+
+section {
+  margin-bottom: 70px;
+}

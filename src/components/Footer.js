@@ -10,6 +10,8 @@ export default function Footer() {
           Impressum
         </Link>
       </li>
+      <li className={styles.color}>Datenschutz</li>
+      <li className={styles.color}>nach oben</li>
     </ul>
   );
 }

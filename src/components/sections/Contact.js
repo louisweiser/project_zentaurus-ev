@@ -1,10 +1,14 @@
 import SectionTitle from "../SectionTitle.js";
 import { contactData } from "../../../public/content/contact";
+import { useSectionRefs } from "@/pages/_app.js";
 
 import React, { useRef, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 
+import styles from "./Contact.module.css";
+
 export default function ContactContent() {
+  const sectionRefs = useSectionRefs();
   const mapRef = useRef();
   const mapInstanceRef = useRef();
 
@@ -66,27 +70,54 @@ export default function ContactContent() {
 
   const handleMapClick = () => {
     const address = "Zentaurus e.V., Ringstraße, Oberbarnim";
-    window.location.href = `geo:0,0?q=${encodeURIComponent(address)}`;
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
+    if (isMobile) {
+      window.location.href = `geo:0,0?q=${encodeURIComponent(address)}`;
+    } else {
+      window.open(
+        `https://www.google.com/maps?q=${encodeURIComponent(address)}`,
+        "_blank"
+      );
+    }
   };
 
   return (
-    <section id="section8">
+    <section id="section8" ref={sectionRefs[7]} className={styles.section}>
       <SectionTitle title="Kontakt" />
-      <div>
-        <p>{contactData.name}</p>
-        <p>{contactData.street}</p>
-        <p>{contactData.county}</p>
-        <p>{contactData.postal}</p>
-        <p>Telefon: {contactData.phone}</p>
-        <p>Telefax: {contactData.fax}</p>
-        <p>E-Mail: {contactData.mail}</p>
+      <div className={styles.contact}>
+        <ul className={styles.list}>
+          <li>{contactData.name}</li>
+          <li>{contactData.street}</li>
+          <li>{contactData.county}</li>
+          <li>{contactData.postal}</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <td>Telefon:</td>
+              <td>{contactData.phone}</td>
+            </tr>
+            <tr>
+              <td>Telefax:</td>
+              <td>{contactData.fax}</td>
+            </tr>
+            <tr>
+              <td>E-Mail:</td>
+              <td>{contactData.mail}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div
         ref={mapRef}
+        className={styles.map}
         style={{ width: "100%", height: "400px", cursor: "pointer" }}
         onClick={handleMapClick}
       />
-      ;
     </section>
   );
 }

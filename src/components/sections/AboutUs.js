@@ -3,6 +3,7 @@ import Article from "../Article.js";
 import TeamCard from "../TeamCard.js";
 import SectionTitle from "../SectionTitle.js";
 import { useSectionRefs } from "@/pages/_app.js";
+
 import {
   philosophyText,
   aboutUsText,
