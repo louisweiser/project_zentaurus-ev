@@ -21,6 +21,9 @@ export default function ContactContent() {
         touchZoom: false,
         scrollWheelZoom: false,
         doubleClickZoom: false,
+        maxZoom: 18,
+        minZoom: 8,
+        zoomDelta: 2,
       });
 
       mapInstanceRef.current = map;
@@ -47,6 +50,10 @@ export default function ContactContent() {
             });
 
             L.marker([lat, lon], { icon: customIcon }).addTo(map);
+
+            map.on("zoomend", function () {
+              map.setView([lat, lon]);
+            });
           }
         });
     });
@@ -59,7 +66,10 @@ export default function ContactContent() {
 
   const handleMapClick = () => {
     const address = "Zentaurus e.V., Ringstraße, Oberbarnim";
-    window.location.href = `https://www.google.com/maps?q=${address}`;
+    window.open(
+      `https://www.google.com/maps?q=${encodeURIComponent(address)}`,
+      "_blank"
+    );
   };
 
   return (
