@@ -17,8 +17,15 @@ export default function Home() {
     <>
       <Head>
         <title>Zentaurus-EV</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/logo.png" />
+        <meta name="description" content="Verein für Inklusion" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Zentaurus-EV" />
+        <meta property="og:description" content="Verein für Inklusion" />
+        <meta property="og:image" content="/images/img_02.jpg" />
+        <meta property="og:url" content="https://zentaurus-ev.vercel.app/" />
       </Head>
       <main>
         <Header />
