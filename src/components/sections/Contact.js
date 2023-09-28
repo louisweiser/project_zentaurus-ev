@@ -19,13 +19,13 @@ export default function ContactContent() {
       const address = "Ringstraße 16, Ernsthof, Germany";
       const map = L.map(mapRef.current, {
         center: [52.602158, 14.019452],
-        zoom: 16,
+        zoom: 14,
         zoomControl: true,
         dragging: false,
         touchZoom: false,
         scrollWheelZoom: false,
         doubleClickZoom: false,
-        maxZoom: 18,
+        maxZoom: 16,
         minZoom: 8,
         zoomDelta: 2,
       });
@@ -44,7 +44,7 @@ export default function ContactContent() {
         .then((data) => {
           if (data.length > 0) {
             const { lat, lon } = data[0];
-            map.setView([lat, lon], 16);
+            map.setView([lat, lon], 14);
 
             const customIcon = L.icon({
               iconUrl: "/images/pin_map_google_icon.png",
