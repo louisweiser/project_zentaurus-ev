@@ -2,8 +2,8 @@
 }
 
 .subtitle {
-  padding: 30px 0 10px 0;
-  text-align: center;
+  padding: 30px 0 10px 20px;
+  font-family: "LatoBold";
 }
 
 .paragraph {
@@ -12,9 +12,6 @@
 
 .text {
   padding: 16px 16px 36px 16px;
-}
-
-.title {
 }
 
 .color {

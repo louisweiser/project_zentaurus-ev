@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/images/logo.png" />
         <meta name="description" content="Verein für Inklusion" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Zentaurus-EV" />
         <meta property="og:description" content="Verein für Inklusion" />

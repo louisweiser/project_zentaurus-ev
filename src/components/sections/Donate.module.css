@@ -1,12 +1,15 @@
 .table {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: #e1eedd;
-  padding: 20px 0;
+  padding: 20px;
   border-top: #183a1d 1px solid;
   border-bottom: #183a1d 1px solid;
+  gap: 10px;
 }
 
 .td {
   color: #183a1d;
+  list-style: none;
 }

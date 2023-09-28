@@ -17,6 +17,6 @@ export const bankData = {
   county: "Amtsgericht Frankfurt Oder",
   number: "VR 6157",
   name: "EthikBank",
-  iban: "DE028 3094 4950 003296610",
+  iban: "DE02 8309 4495 0003 2966 10",
   bic: "GENODEF1ETK",
 };
