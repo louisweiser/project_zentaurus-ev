@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import styles from "./LinkContainer.module.css";
 
@@ -30,17 +30,40 @@ export default function ProjectLinkContainer({ project }) {
     };
   }, []);
 
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <div className={styles["component-container"]} ref={containerRef}>
-      <div className={styles["image-container"]}>
-        <Image
-          src={"/images" + project.image}
-          alt="Image"
-          fill={true}
-          style={{ objectFit: "cover" }}
-        ></Image>
+      <div className={styles.flipCard} onClick={handleClick}>
+        <div
+          className={styles.flipCardInner}
+          style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)" }}
+        >
+          <div className={styles.flipCardFront}>
+            <div className={styles["image-container"]}>
+              <Image
+                src={"/images" + project.image}
+                alt="Image"
+                fill={true}
+                style={{ objectFit: "cover" }}
+              ></Image>
+            </div>
+            <h2 className={styles.text}>{project.name}</h2>
+          </div>
+          <div className={styles.flipCardBack}>
+            <p className={styles.textw}>
+              Jeden Sommer veranstalten wir eine 3-wöchige Förderzeit in den
+              Schulferien. Eine Gemeinschaft von Kindern, Jugendlichen und
+              Erwachsenen.
+            </p>
+            <div className={styles.but}>weitere infos</div>
+          </div>
+        </div>
       </div>
-      <h2 className={styles.text}>{project.name}</h2>
     </div>
   );
 }

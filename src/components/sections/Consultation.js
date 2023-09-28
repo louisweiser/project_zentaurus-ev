@@ -9,7 +9,7 @@ export default function ConsultationContent() {
 
   const content = counselingData.map((object, index) => (
     <div key={index}>
-      <h3>{object.title}</h3>
+      <h3 className={styles.headline}>{object.title}</h3>
       <ul className={styles.list}>
         {object.content.map((content, index) => (
           <li key={index}>{content}</li>
