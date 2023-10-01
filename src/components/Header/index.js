@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import HeaderMenu from "./Menu.js";
+import Navigation from "./Navigation.js";
 import ProgressBar from "./ProgressBar.js";
 import Headline from "./Headline.js";
 
@@ -30,7 +30,7 @@ export default function Header() {
         />
       </button>
       <ProgressBar />
-      <HeaderMenu
+      <Navigation
         onClickHandler={onClickHandler}
         isMenuVisible={isMenuVisible}
       />
