@@ -1,32 +1,45 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
 import styles from "./ImageSlider.module.css";
 
-function ImageSlider() {
-  const images = [
-    "/images/img_02.jpg",
-    "/images/img_03.jpg",
-    "/images/img_04.jpg",
-    "/images/img_05.jpg",
-    "/images/img_06.jpg",
-  ];
+const IMAGES = [
+  "/images/img_02.jpg",
+  "/images/img_03.jpg",
+  "/images/img_04.jpg",
+  "/images/img_05.jpg",
+  "/images/img_06.jpg",
+];
+
+const SWIPE_THRESHOLD = 50;
+const TRANSITION_DURATION_SWIPE = "0.2s";
+const TRANSITION_DURATION_AUTO = "1s";
+const AUTO_SLIDE_INTERVAL = 4000;
+const AUTO_SLIDE_TRANSITION_DELAY = 1000;
+const SWIPE_TRANSITION_DELAY = 200;
+
+export default function ImageSlider() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
-  const length = images.length;
-  const [transitionDuration, setTransitionDuration] = useState("1s"); // Neue State-Variable
+  const [transitionDuration, setTransitionDuration] = useState(
+    TRANSITION_DURATION_AUTO
+  );
+
+  const length = IMAGES.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isTransitioning) {
         setIsTransitioning(true);
         setCurrent((prev) => (prev + 1) % length);
-        setTimeout(() => setIsTransitioning(false), 2000);
+        setTimeout(
+          () => setIsTransitioning(false),
+          AUTO_SLIDE_TRANSITION_DELAY
+        );
       }
-    }, 4000);
+    }, AUTO_SLIDE_INTERVAL);
     return () => clearInterval(interval);
-  }, [isTransitioning]);
+  }, [isTransitioning, length]);
 
   const handleTouchStart = (e) => {
     setTouchStart(e.touches[0].clientX);
@@ -34,47 +47,49 @@ function ImageSlider() {
 
   const handleTouchMove = (e) => {
     const touchEnd = e.changedTouches[0].clientX;
-    if (!isTransitioning) {
+    if (!isTransitioning && Math.abs(touchStart - touchEnd) > SWIPE_THRESHOLD) {
       setIsTransitioning(true);
-      setTransitionDuration("0.2s"); // Schnellerer Übergang beim Wischen
-      if (touchStart - touchEnd > 70) {
-        // Nach rechts wischen
+      setTransitionDuration(TRANSITION_DURATION_SWIPE);
+      if (touchStart - touchEnd > SWIPE_THRESHOLD) {
         setCurrent((prev) => (prev + 1) % length);
-      } else if (touchStart - touchEnd < -70) {
-        // Nach links wischen
+      } else if (touchStart - touchEnd < -SWIPE_THRESHOLD) {
         setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
       }
       setTimeout(() => {
         setIsTransitioning(false);
-        setTransitionDuration("1s"); // Setzen Sie die Dauer zurück, wenn der Übergang abgeschlossen ist
-      }, 200);
+        setTransitionDuration(TRANSITION_DURATION_AUTO);
+      }, SWIPE_TRANSITION_DELAY);
     }
   };
 
   return (
     <div
-      className={styles.slider}
+      className={styles["image-slider"]}
       onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchMove}
+      onTouchMove={handleTouchMove}
+      aria-live="polite"
     >
-      <div className={styles.sliderInner}>
-        {images.map((src, index) => (
+      <div className={styles["image-slider__container"]}>
+        {IMAGES.map((src, index) => (
           <div
-            key={index}
-            className={`${styles.slide} ${
-              index === current ? styles.active : ""
+            key={src}
+            className={`${styles["image-slider__item"]} ${
+              index === current ? styles["image-slider__item--active"] : ""
             }`}
-            style={{ transitionDuration }} // Anwenden der Übergangsdauer auf .slide
+            style={{ transitionDuration }}
+            role="img"
+            aria-label={`Slide image ${index + 1}`}
+            aria-hidden={index !== current}
           >
-            <div className={styles.imageContainer}>
+            <div className={styles["image-slider__image-wrapper"]}>
               <Image
                 src={src}
-                alt={`Image ${index}`}
+                alt={`Slide image ${index + 1}`}
                 fill={true}
                 style={{ objectFit: "cover" }}
                 loading={"eager"}
               />
-              <div className={styles.overlay}></div>
+              <div className={styles["image-slider__overlay"]}></div>
             </div>
           </div>
         ))}
@@ -82,5 +97,3 @@ function ImageSlider() {
     </div>
   );
 }
-
-export default ImageSlider;
