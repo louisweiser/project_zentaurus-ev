@@ -18,7 +18,6 @@ export default function Headline() {
     "Beratung",
     "Vorgehen",
     "Projekte",
-    "Blog",
     "Spenden",
     "Kontakt",
   ];

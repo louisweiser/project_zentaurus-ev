@@ -23,7 +23,6 @@ const SectionRefsProvider = ({ children }) => {
     useRef(null),
     useRef(null),
     useRef(null),
-    useRef(null),
   ];
 
   return (

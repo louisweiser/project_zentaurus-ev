@@ -9,7 +9,6 @@ import AboutUsContent from "@/components/sections/AboutUs";
 import IntroductionContent from "@/components/sections/Introduction";
 import ApproachContent from "@/components/sections/Approach";
 import ProjectsContent from "@/components/sections/Projects";
-import BlogContent from "@/components/sections/Blog";
 import DonateContent from "@/components/sections/Donate";
 import ContactContent from "@/components/sections/Contact";
 
@@ -43,7 +42,6 @@ export default function Home() {
         <ConsultationContent />
         <ApproachContent />
         <ProjectsContent />
-        <BlogContent />
         <DonateContent />
         <ContactContent />
         <Footer />

@@ -62,23 +62,13 @@ export default function HeaderMenu(props) {
               onClickHandler();
             }}
           >
-            Blog
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section7");
-              onClickHandler();
-            }}
-          >
             Spenden
           </button>
         </li>
         <li>
           <button
             onClick={() => {
-              scrollToIntendedSection("section8");
+              scrollToIntendedSection("section7");
               onClickHandler();
             }}
           >
