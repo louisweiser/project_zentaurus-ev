@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
-import Image from "next/image";
 
 import { SectionRefsContext } from "@/pages/_app";
 
@@ -92,16 +91,13 @@ export default function Headline() {
   }, [sectionRefs]);
 
   return (
-    <div className={styles["header-content"]}>
-      <Image src={"/images/logo.png"} alt="logo" height={64} width={64}></Image>
-      <h1
-        className={`${styles.headline} ${
-          isAnimating ? styles.fadeOut : styles.fadeIn
-        }`}
-        key={headline}
-      >
-        {headline}
-      </h1>
-    </div>
+    <h1
+      className={`${styles.headline} ${
+        isAnimating ? styles.fadeOut : styles.fadeIn
+      }`}
+      key={headline}
+    >
+      {headline}
+    </h1>
   );
 }

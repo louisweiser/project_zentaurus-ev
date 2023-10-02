@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "./ProgressBar.module.css"; // Importieren Sie den CSS-Modul
 
-export default function ProgressBar({ setNewHeadline }) {
+import styles from "./ProgressBar.module.css";
+
+export default function ProgressBar() {
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {

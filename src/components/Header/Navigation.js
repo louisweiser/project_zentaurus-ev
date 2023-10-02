@@ -5,7 +5,11 @@ export default function HeaderMenu(props) {
   const onClickHandler = props.onClickHandler;
 
   const scrollToIntendedSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop;
+      window.scrollTo({ top: offsetTop + 7, behavior: "smooth" });
+    }
   };
 
   return (

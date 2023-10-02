@@ -25,6 +25,7 @@ const SectionRefsProvider = ({ children }) => {
     useRef(null),
     useRef(null),
   ];
+
   return (
     <SectionRefsContext.Provider value={sectionRefs}>
       {children}
