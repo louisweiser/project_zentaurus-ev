@@ -1,9 +1,13 @@
-import Header from "@/components/Header";
+import Article from "@/components/Article";
+import PageHeader from "@/components/Header/PageHeader";
 
-export default function beratung() {
+import { projectData } from "../../../public/content/project";
+
+export default function HilfeImAlltag() {
   return (
     <>
-      <Header></Header>
+      <PageHeader />
+      <Article text={projectData[1].text} />
     </>
   );
 }

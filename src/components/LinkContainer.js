@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 
 import styles from "./LinkContainer.module.css";
 
@@ -55,12 +56,10 @@ export default function ProjectLinkContainer({ project }) {
             <h2 className={styles.text}>{project.name}</h2>
           </div>
           <div className={styles.flipCardBack}>
-            <p className={styles.textw}>
-              Jeden Sommer veranstalten wir eine 3-wöchige Förderzeit in den
-              Schulferien. Eine Gemeinschaft von Kindern, Jugendlichen und
-              Erwachsenen.
-            </p>
-            <div className={styles.but}>weitere infos</div>
+            <p className={styles.textw}>{project.description}</p>
+            <div className={styles.but}>
+              <Link href={`/projekt/${project.domain}`}>weitere infos</Link>
+            </div>
           </div>
         </div>
       </div>
