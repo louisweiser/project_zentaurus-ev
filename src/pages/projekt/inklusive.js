@@ -3,11 +3,13 @@ import RoutingHeader from "@/components/Header/RoutingHeader";
 
 import { projectData } from "../../../public/content/project";
 
+import styles from "../index.module.css";
+
 export default function beratung() {
   return (
-    <>
+    <div className={styles.section}>
       <RoutingHeader />
       <Article text={projectData[0].text} />
-    </>
+    </div>
   );
 }
