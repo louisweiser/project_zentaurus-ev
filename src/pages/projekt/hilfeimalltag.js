@@ -1,12 +1,12 @@
 import Article from "@/components/Article";
-import PageHeader from "@/components/Header/PageHeader";
+import RoutingHeader from "@/components/Header/RoutingHeader";
 
 import { projectData } from "../../../public/content/project";
 
 export default function HilfeImAlltag() {
   return (
     <>
-      <PageHeader />
+      <RoutingHeader />
       <Article text={projectData[1].text} />
     </>
   );
