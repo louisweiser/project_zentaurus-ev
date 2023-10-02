@@ -15,12 +15,17 @@ export default function Footer() {
           Impressum
         </Link>
       </li>
-      <li className={styles.color}>Datenschutz</li>
-      <li className={styles.color}>
+      <li>
+        <Link href={"datenschutz"} className={styles.color}>
+          Datenschutz
+        </Link>
+      </li>
+      <li>
         <button
           onClick={() => {
             scrollToIntendedSection("section1");
           }}
+          className={styles.color}
         >
           nach oben
         </button>

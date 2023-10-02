@@ -1,4 +1,4 @@
-const dataProtectionData = [
+export const dataProtectionData = [
   {
     title: "Verantwortlicher",
     text: ["Zentaurus e.V.", "Ringstr. 16", "OT Ernsthof", "15377 Oberbarnim"],
