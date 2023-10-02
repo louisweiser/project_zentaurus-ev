@@ -1,5 +1,3 @@
-import Header from "@/components/Header/index.js";
-
 import {
   haftungsbeschränkung,
   haftungsausschluss,
@@ -8,7 +6,6 @@ import {
 export default function Impressum() {
   return (
     <>
-      <Header></Header>
       <h1>Impressum</h1>
       <h3>§ 1 Haftungsbeschränkung</h3>
       <p>{haftungsbeschränkung}</p>
