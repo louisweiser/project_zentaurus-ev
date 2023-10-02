@@ -19,7 +19,7 @@ export default function AboutUsContent() {
   const [openedMemberId, setOpenedMemberId] = useState(null);
 
   return (
-    <section id="section2" ref={sectionRefs[1]}>
+    <section id="section1" ref={sectionRefs[1]}>
       <SectionTitle title="Über Uns" />
       <Article text={aboutUsText} colored={true}></Article>
       <Article subtitle="Der Verein" text={unionText} colored={true}></Article>

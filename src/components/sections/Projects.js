@@ -25,7 +25,7 @@ export default function ProjectsContent() {
   }, [router]);
 
   return (
-    <section id="section5" ref={sectionRefs[4]}>
+    <section id="section4" ref={sectionRefs[4]}>
       <SectionTitle title="Projekte" />
       {projectData.map((project, index) => (
         <article key={index}>

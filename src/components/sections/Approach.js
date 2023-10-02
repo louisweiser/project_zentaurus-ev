@@ -13,7 +13,7 @@ export default function ApproachContent() {
   const sectionRefs = useSectionRefs();
 
   return (
-    <section id="section4" ref={sectionRefs[3]}>
+    <section id="section3" ref={sectionRefs[3]}>
       <SectionTitle title="Vorgehen" />
       <Article
         subtitle="Erfahrung"

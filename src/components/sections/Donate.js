@@ -9,7 +9,7 @@ export default function DonateContent() {
   const sectionRefs = useSectionRefs();
 
   return (
-    <section id="section6" ref={sectionRefs[5]}>
+    <section id="section5" ref={sectionRefs[5]}>
       <SectionTitle title="Spenden" />
       <Article text={bankData.text} colored={true} />
       <div className={styles.table}>

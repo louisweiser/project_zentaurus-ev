@@ -19,7 +19,7 @@ export default function ConsultationContent() {
   ));
 
   return (
-    <section id="section3" ref={sectionRefs[2]}>
+    <section id="section2" ref={sectionRefs[2]}>
       <SectionTitle title="Beratung" />
       <article className={styles.section}>{content}</article>
     </section>

@@ -10,7 +10,7 @@ export default function IntroductionContent() {
 
   return (
     <section
-      id="section1"
+      id="section0"
       ref={sectionRefs[0]}
       className={styles["section-container"]}
     >

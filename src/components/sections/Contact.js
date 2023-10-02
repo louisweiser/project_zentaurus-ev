@@ -86,7 +86,7 @@ export default function ContactContent() {
   };
 
   return (
-    <section id="section7" ref={sectionRefs[6]} className={styles.section}>
+    <section id="section6" ref={sectionRefs[6]} className={styles.section}>
       <SectionTitle title="Kontakt" />
       <div className={styles.contact}>
         <ul className={styles.list}>
