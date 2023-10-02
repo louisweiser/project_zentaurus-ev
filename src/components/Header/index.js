@@ -12,13 +12,31 @@ export default function Header() {
   const [isRotated, setRotated] = useState(false);
 
   const onClickHandler = () => {
-    setMenuVisible(!isMenuVisible);
-    setRotated(!isRotated);
+    setMenuVisible((prev) => !prev);
+    setRotated((prev) => !prev);
+  };
+
+  const scrollToIntendedSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <header className={styles.header}>
-      <Headline />
+      <div className={styles["header-content"]}>
+        <button
+          onClick={() => {
+            scrollToIntendedSection("section1");
+          }}
+        >
+          <Image
+            src={"/images/logo.png"}
+            alt="logo"
+            height={64}
+            width={64}
+          ></Image>
+        </button>
+        <Headline />
+      </div>
       <button className={styles.button} onClick={onClickHandler}>
         <Image
           src="/svgs/menu.svg"

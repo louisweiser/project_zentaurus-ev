@@ -7,6 +7,15 @@
   animation: fadeOutAnimation 0.5s forwards;
 }
 
+.headline {
+  padding-left: 20px;
+  font-size: 1.5rem;
+  font-family: "Merriweather";
+  font-weight: 400;
+  padding-top: 3px;
+  color: #24251f;
+}
+
 @keyframes fadeInAnimation {
   to {
     opacity: 1;
@@ -17,19 +26,4 @@
   to {
     opacity: 0;
   }
-}
-
-.headline {
-  padding-left: 20px;
-  font-size: 1.5rem;
-  font-family: "Merriweather";
-  font-weight: 400;
-  padding-top: 3px;
-  color: #24251f;
-}
-
-.header-content {
-  display: flex;
-  padding-left: 20px;
-  align-items: center;
 }
