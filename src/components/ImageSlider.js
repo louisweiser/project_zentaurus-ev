@@ -15,6 +15,7 @@ function ImageSlider() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const length = images.length;
+  const [transitionDuration, setTransitionDuration] = useState("1s"); // Neue State-Variable
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,6 +36,7 @@ function ImageSlider() {
     const touchEnd = e.changedTouches[0].clientX;
     if (!isTransitioning) {
       setIsTransitioning(true);
+      setTransitionDuration("0.2s"); // Schnellerer Übergang beim Wischen
       if (touchStart - touchEnd > 70) {
         // Nach rechts wischen
         setCurrent((prev) => (prev + 1) % length);
@@ -42,7 +44,10 @@ function ImageSlider() {
         // Nach links wischen
         setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
       }
-      setTimeout(() => setIsTransitioning(false), 400);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setTransitionDuration("1s"); // Setzen Sie die Dauer zurück, wenn der Übergang abgeschlossen ist
+      }, 200);
     }
   };
 
@@ -59,6 +64,7 @@ function ImageSlider() {
             className={`${styles.slide} ${
               index === current ? styles.active : ""
             }`}
+            style={{ transitionDuration }} // Anwenden der Übergangsdauer auf .slide
           >
             <div className={styles.imageContainer}>
               <Image
