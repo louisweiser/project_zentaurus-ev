@@ -1,7 +1,7 @@
 import styles from "./Navigation.module.css";
 
 export default function HeaderMenu(props) {
-  const isMenuVisible = props.isMenuVisible;
+  const isNavigationVisible = props.isNavigationVisible;
   const onClickHandler = props.onClickHandler;
 
   const scrollToIntendedSection = (sectionId) => {
@@ -13,7 +13,9 @@ export default function HeaderMenu(props) {
   };
 
   return (
-    <div className={`${styles.menu} ${isMenuVisible ? styles.visible : ""}`}>
+    <nav
+      className={`${styles.menu} ${isNavigationVisible ? styles.visible : ""}`}
+    >
       <ul className={styles.menuList}>
         <li>
           <button
@@ -76,6 +78,6 @@ export default function HeaderMenu(props) {
           </button>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }

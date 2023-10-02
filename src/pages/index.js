@@ -2,15 +2,14 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-import ConsultationContent from "@/components/sections/Consultation";
-import AboutUsContent from "@/components/sections/AboutUs";
 import IntroductionContent from "@/components/sections/Introduction";
+import AboutUsContent from "@/components/sections/AboutUs";
+import ConsultationContent from "@/components/sections/Consultation";
 import ApproachContent from "@/components/sections/Approach";
 import ProjectsContent from "@/components/sections/Projects";
 import DonateContent from "@/components/sections/Donate";
 import ContactContent from "@/components/sections/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {

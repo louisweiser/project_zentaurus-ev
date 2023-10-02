@@ -9,10 +9,8 @@
   width: 100%;
   z-index: 21000000;
 }
-/*add8e6 - das schöne hellblau*/
-/* first header #fffacd secound #ff6f61*/
 
-.button {
+.header__button {
   position: fixed;
   right: 0px;
   top: 0px;
@@ -20,23 +18,26 @@
   z-index: 21000000;
 }
 
-.rotate {
+.header__rotate {
   transform: rotate(-90deg);
   transition: transform 0.5s ease-in-out;
 }
 
-.rotateBack {
+.header__rotate-back {
   transition: transform 0.5s ease-in-out;
 }
 
-.button:active {
+.header__button:active {
   transform: scale(0.9);
   transition: transform 0.1s ease-in-out;
 }
 
-.header-content {
+.header__content {
   display: flex;
   padding-left: 20px;
   align-items: center;
   padding-top: 4px;
 }
+
+/*add8e6 - das schöne hellblau*/
+/* first header #fffacd secound #ff6f61*/

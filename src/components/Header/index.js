@@ -8,40 +8,48 @@ import Headline from "./Headline.js";
 import styles from "./index.module.css";
 
 export default function Header() {
-  const [isMenuVisible, setMenuVisible] = useState(false);
+  const [isNavigationVisible, setNavigationVisible] = useState(false);
   const [isRotated, setRotated] = useState(false);
 
   const onClickHandler = () => {
-    setMenuVisible((prev) => !prev);
+    setNavigationVisible((prev) => !prev);
     setRotated((prev) => !prev);
   };
 
-  const scrollToIntendedSection = (sectionId) => {
+  const scrollToSection = (sectionId) => () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <header className={styles.header}>
-      <div className={styles["header-content"]}>
+      <div className={styles["header__content"]}>
         <button
-          onClick={() => {
-            scrollToIntendedSection("section1");
-          }}
+          onClick={scrollToSection("section1")}
+          aria-label="Go to Beginning"
+          role="button"
         >
           <Image
             src={"/images/logo.png"}
-            alt="logo"
+            alt="union-logo"
             height={64}
             width={64}
-          ></Image>
+          />
         </button>
         <Headline />
       </div>
-      <button className={styles.button} onClick={onClickHandler}>
+      <button
+        className={styles["header__button"]}
+        onClick={onClickHandler}
+        aria-expanded={isNavigationVisible}
+        aria-label="Toggle Navigation"
+        role="button"
+      >
         <Image
           src="/svgs/menu.svg"
-          alt="open menu"
-          className={isRotated ? styles.rotate : styles.rotateBack}
+          alt="navigation-item"
+          className={
+            isRotated ? styles["header__rotate"] : styles["header__rotate-back"]
+          }
           width={100}
           height={24}
           priority
@@ -50,7 +58,7 @@ export default function Header() {
       <ProgressBar />
       <Navigation
         onClickHandler={onClickHandler}
-        isMenuVisible={isMenuVisible}
+        isNavigationVisible={isNavigationVisible}
       />
     </header>
   );
