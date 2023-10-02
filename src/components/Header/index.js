@@ -24,7 +24,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles["header__content"]}>
         <button
-          onClick={scrollToSection("section1")}
+          onClick={scrollToSection("section0")}
           aria-label="Go to Beginning"
           role="button"
         >
