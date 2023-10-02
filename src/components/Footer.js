@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./Footer.module.css";
 
@@ -20,14 +21,19 @@ export default function Footer() {
           Datenschutz
         </Link>
       </li>
-      <li>
+      <li className={styles.parent}>
         <button
           onClick={() => {
             scrollToIntendedSection("section1");
           }}
-          className={styles.color}
+          className={styles.button}
         >
-          nach oben
+          <Image
+            src="/svgs/arrowUp.svg"
+            alt="UP"
+            width={30}
+            height={30}
+          ></Image>
         </button>
       </li>
     </ul>
