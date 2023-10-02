@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Head from "next/head";
 
 import Header from "@/components/Header";
@@ -13,6 +14,14 @@ import DonateContent from "@/components/sections/Donate";
 import ContactContent from "@/components/sections/Contact";
 
 export default function Home() {
+  useEffect(() => {
+    const scroll = sessionStorage.getItem("scroll");
+    if (scroll) {
+      window.scrollTo(0, parseInt(scroll));
+      sessionStorage.removeItem("scroll");
+    }
+  }, []);
+
   return (
     <>
       <Head>
