@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import Navigation from "./Navigation.js";
-import ProgressBar from "./ProgressBar.js";
+import ScrollProgressBar from "./ScrollProgressBar.js";
 import Headline from "./Headline.js";
 
 import styles from "./index.module.css";
@@ -55,7 +55,7 @@ export default function Header() {
           priority
         />
       </button>
-      <ProgressBar />
+      <ScrollProgressBar />
       <Navigation
         onClickHandler={onClickHandler}
         isNavigationVisible={isNavigationVisible}

@@ -4,6 +4,15 @@ import { SectionRefsContext } from "@/pages/_app";
 
 import styles from "./Headline.module.css";
 
+const Headlines = [
+  "Über uns",
+  "Beratung",
+  "Vorgehen",
+  "Projekte",
+  "Spenden",
+  "Kontakt",
+];
+
 export default function Headline() {
   const [currentSection, setCurrentSection] = useState(null);
   const [headline, setHeadline] = useState("");
@@ -11,15 +20,6 @@ export default function Headline() {
   const [timeoutId, setTimeoutId] = useState(null);
 
   const sectionRefs = useContext(SectionRefsContext);
-
-  const Headlines = [
-    "Über uns",
-    "Beratung",
-    "Vorgehen",
-    "Projekte",
-    "Spenden",
-    "Kontakt",
-  ];
 
   const currentSectionRef = useRef(currentSection);
 
@@ -29,9 +29,7 @@ export default function Headline() {
 
   function setNewHeadline(newHeadline) {
     if (isAnimating) return;
-
     setIsAnimating(true);
-
     setTimeout(() => {
       setHeadline("");
       setIsAnimating(false);
@@ -46,10 +44,9 @@ export default function Headline() {
       }
       const numStr = newHeadline.replace(/\D/g, "");
       const num = parseInt(numStr, 10);
-
       setHeadline(Headlines[num - 1]);
       setIsAnimating(false);
-    }, 500); // Dauer der Fade-Out-Animation
+    }, 500);
 
     setTimeoutId(id);
   }
@@ -58,40 +55,32 @@ export default function Headline() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Überprüfen, ob der oberste Rand des Elements den oberen Rand des Viewports erreicht hat
           if (entry.boundingClientRect.top <= 0 && entry.isIntersecting) {
             setCurrentSection(entry.target.id);
             setNewHeadline(entry.target.id);
           }
         });
       },
-      {
-        threshold: 0, // Auslösen, sobald das erste Pixel sichtbar wird
-        rootMargin: "0px 0px -100% 0px", // Der Observer wird ausgelöst, wenn der Anfang des Elements den oberen Rand des Viewports erreicht
-      }
+      { threshold: 0, rootMargin: "0px 0px -100% 0px" }
     );
 
     sectionRefs.forEach((refObj) => {
       const ref = refObj.current;
-      if (ref) {
-        observer.observe(ref);
-      }
+      if (ref) observer.observe(ref);
     });
 
     return () => {
       sectionRefs.forEach((refObj) => {
         const ref = refObj.current;
-        if (ref) {
-          observer.unobserve(ref);
-        }
+        if (ref) observer.unobserve(ref);
       });
     };
   }, [sectionRefs]);
 
   return (
     <h1
-      className={`${styles.headline} ${
-        isAnimating ? styles.fadeOut : styles.fadeIn
+      className={`${styles["headline"]} ${
+        isAnimating ? styles["headline--fadeOut"] : styles["headline--fadeIn"]
       }`}
       key={headline}
     >

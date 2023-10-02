@@ -1,12 +1,3 @@
-.fadeIn {
-  opacity: 0;
-  animation: fadeInAnimation 0.5s forwards;
-}
-
-.fadeOut {
-  animation: fadeOutAnimation 0.5s forwards;
-}
-
 .headline {
   padding-left: 20px;
   font-size: 1.5rem;
@@ -14,6 +5,15 @@
   font-weight: 400;
   padding-top: 3px;
   color: var(--header-text-color);
+}
+
+.headline--fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 0.5s forwards;
+}
+
+.headline--fadeOut {
+  animation: fadeOutAnimation 0.5s forwards;
 }
 
 @keyframes fadeInAnimation {

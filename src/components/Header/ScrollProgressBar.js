@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import styles from "./ProgressBar.module.css";
+import styles from "./ScrollProgressBar.module.css";
 
-export default function ProgressBar() {
+export default function ScrollProgressBar() {
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {
@@ -21,8 +21,8 @@ export default function ProgressBar() {
   }, []);
 
   return (
-    <div className={styles.progressBarContainer}>
-      <div className={styles.progressBar} style={{ width: `${scroll}%` }} />
+    <div className={styles["progress-bar__container"]}>
+      <div className={styles["progress-bar"]} style={{ width: `${scroll}%` }} />
     </div>
   );
 }

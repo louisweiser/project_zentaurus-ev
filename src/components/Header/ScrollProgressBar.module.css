@@ -1,4 +1,4 @@
-.progressBarContainer {
+.progress-bar__container {
   position: fixed;
   top: 70px;
   left: 0;
@@ -8,7 +8,7 @@
   z-index: 10;
 }
 
-.progressBar {
+.progress-bar {
   height: 100%;
   background-color: var(--accent-color);
 }

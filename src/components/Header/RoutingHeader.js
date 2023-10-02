@@ -1,4 +1,3 @@
-import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -12,14 +11,19 @@ export default function RoutingHeader() {
   };
 
   return (
-    <header className={styles.header}>
-      <button onClick={goBack}>
+    <header className={styles["routing-header"]}>
+      <button
+        onClick={goBack}
+        className={styles["routing-header__button"]}
+        aria-label="Go back"
+        role="button"
+      >
         <Image
           src={"/svgs/arrowBack.svg"}
-          alt={"back routing"}
+          alt="Go back"
           width={40}
           height={40}
-        ></Image>
+        />
       </button>
     </header>
   );

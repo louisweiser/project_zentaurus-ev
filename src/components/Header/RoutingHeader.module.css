@@ -1,11 +1,16 @@
-.header {
+.routing-header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #f6c453;
+  background-color: var(--primary-color);
   height: 50px;
   width: 100%;
   z-index: 10;
+  padding-left: 5px;
+}
+
+.routing-header__button {
+  height: 40px;
 }
