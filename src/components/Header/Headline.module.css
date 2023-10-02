@@ -13,7 +13,7 @@
   font-family: "Merriweather";
   font-weight: 400;
   padding-top: 3px;
-  color: #24251f;
+  color: var(--header-text-color);
 }
 
 @keyframes fadeInAnimation {

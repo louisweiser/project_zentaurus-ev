@@ -1,9 +1,10 @@
+import { headlines } from "../../../public/content/sections.js";
 import styles from "./Navigation.module.css";
 
-export default function HeaderMenu(props) {
-  const isNavigationVisible = props.isNavigationVisible;
-  const onClickHandler = props.onClickHandler;
-
+export default function NavigationMenu({
+  isNavigationVisible,
+  onClickHandler,
+}) {
   const scrollToIntendedSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -14,69 +15,29 @@ export default function HeaderMenu(props) {
 
   return (
     <nav
-      className={`${styles.menu} ${isNavigationVisible ? styles.visible : ""}`}
+      className={`${styles.navigation} ${
+        isNavigationVisible ? styles.visible : ""
+      }`}
+      aria-hidden={!isNavigationVisible}
     >
-      <ul className={styles.menuList}>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section2");
-              onClickHandler();
-            }}
-          >
-            Über uns
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section3");
-              onClickHandler();
-            }}
-          >
-            Beratung
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section4");
-              onClickHandler();
-            }}
-          >
-            Vorgehen
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section5");
-              onClickHandler();
-            }}
-          >
-            Projekte
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section6");
-              onClickHandler();
-            }}
-          >
-            Spenden
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              scrollToIntendedSection("section7");
-              onClickHandler();
-            }}
-          >
-            Kontakt
-          </button>
-        </li>
+      <ul className={styles.navigation__list}>
+        {headlines.map((item, index) => {
+          if (index === 0) return null;
+          return (
+            <li key={index}>
+              <button
+                onClick={() => {
+                  scrollToIntendedSection(item.ref);
+                  onClickHandler();
+                }}
+                className={styles.navigation__button}
+                aria-label={`Go to ${item.title} section`}
+              >
+                {item.title}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

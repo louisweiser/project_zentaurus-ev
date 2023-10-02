@@ -13,7 +13,6 @@ export default function Headline() {
   const sectionRefs = useContext(SectionRefsContext);
 
   const Headlines = [
-    "",
     "Über uns",
     "Beratung",
     "Vorgehen",

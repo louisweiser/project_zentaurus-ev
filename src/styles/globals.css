@@ -1,7 +1,21 @@
 :root {
+  --primary-color: #f6c453;
+  --secondary-color: #fefbe9;
+  --accent-color: #f0a04b;
+  --background-color: #e1eedd;
+
+  --dark-text-color: #183a1d;
+  --light-text-color: #fefbe9;
+
+  --header-text-color: #24251f;
+  --bar-background-color: #e0e0e0;
+
   --image-slider-height: 290px;
   --slide-height: 270px;
 }
+
+/*add8e6 - das schöne hellblau*/
+/* first header #fffacd secound #ff6f61*/
 
 @media (prefers-color-scheme: dark) {
   :root {

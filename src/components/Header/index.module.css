@@ -4,10 +4,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #f6c453;
+  background-color: var(--primary-color);
   height: 70px;
   width: 100%;
-  z-index: 21000000;
+  z-index: 10;
 }
 
 .header__button {
@@ -15,7 +15,7 @@
   right: 0px;
   top: 0px;
   height: 70px;
-  z-index: 21000000;
+  z-index: 300;
 }
 
 .header__rotate {
@@ -38,6 +38,3 @@
   align-items: center;
   padding-top: 4px;
 }
-
-/*add8e6 - das schöne hellblau*/
-/* first header #fffacd secound #ff6f61*/
