@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 import styles from "./TeamCard.module.css";
 
-const FrontCard = ({ member, onShowDetail }) => {
+const TeamCardFront = ({ member, onShowDetail }) => {
   const frontCardRef = useRef();
 
   useEffect(() => {
@@ -32,13 +32,17 @@ const FrontCard = ({ member, onShowDetail }) => {
 
   return (
     <div className={styles.popInWrapper} ref={frontCardRef}>
-      <button className={styles.frontCard} onClick={onShowDetail}>
+      <button
+        className={styles["teamCard__card-front"]}
+        onClick={onShowDetail}
+        role="button"
+      >
         <Image
           src={"/images" + member.image}
-          alt={member.name}
+          alt={`Bild von ${member.name}`}
           width={200}
           height={300}
-          className={styles.image}
+          className={styles["teamCard__image"]}
           priority
         />
         <p>{member.name}</p>
@@ -47,7 +51,7 @@ const FrontCard = ({ member, onShowDetail }) => {
           alt="open details"
           width={50}
           height={24}
-          className={`${styles.button} ${styles.right}`}
+          className={`${styles["teamCard__icon"]} ${styles["position-right"]}`}
           priority
         ></Image>
       </button>
@@ -55,8 +59,12 @@ const FrontCard = ({ member, onShowDetail }) => {
   );
 };
 
-const BackCard = ({ member, onHideDetail }) => (
-  <button className={styles.backCard} onClick={onHideDetail}>
+const TeamCardBack = ({ member, onHideDetail }) => (
+  <button
+    className={styles["teamCard__card-back"]}
+    onClick={onHideDetail}
+    role="button"
+  >
     <div className={styles.de}>
       <h3>{member.name}</h3>
       <p>{member.details.title}</p>
@@ -69,7 +77,7 @@ const BackCard = ({ member, onHideDetail }) => (
       alt="close details"
       width={50}
       height={24}
-      className={`${styles.button} ${styles.left}`}
+      className={`${styles["teamCard__icon"]} ${styles["position-left"]}`}
       priority
     ></Image>
   </button>
@@ -97,12 +105,12 @@ export default function TeamCard({ member, isOpen, onToggle }) {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onClick={onToggle}
-      className={`${styles.memberCard} ${
+      className={`${styles["teamCard__card"]} ${
         showDetail && isOpen ? styles.showDetail : ""
       }`}
     >
-      <FrontCard member={member} onShowDetail={() => setShowDetail(true)} />
-      <BackCard member={member} onHideDetail={() => setShowDetail(false)} />
+      <TeamCardFront member={member} onShowDetail={() => setShowDetail(true)} />
+      <TeamCardBack member={member} onHideDetail={() => setShowDetail(false)} />
     </div>
   );
 }

@@ -1,9 +1,8 @@
-.memberCard {
+.teamCard__card {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
   position: relative;
   width: 100%;
   height: 350px;
@@ -12,49 +11,47 @@
   margin-top: 30px;
 }
 
-.frontCard {
+.teamCard__card-front {
   position: relative;
   width: 100%;
   transition: transform 300ms ease-in-out;
 }
 
-.backCard {
+.teamCard__card-back {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   transition: transform 300ms ease-in-out;
-
   padding: 0 60px;
-
   transform: translateX(100%);
 }
 
-.showDetail .frontCard {
+.showDetail .teamCard__card-front {
   transform: translateX(-100%) scale(0);
 }
 
-.showDetail .backCard {
+.showDetail .teamCard__card-back {
   transform: translateX(0);
 }
 
-.button {
+.teamCard__icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
 }
 
-.right {
+.position-right {
   right: 0;
 }
 
-.left {
+.position-left {
   left: 0;
 }
 
-.image {
+.teamCard__image {
   border-radius: 20px;
   object-fit: cover;
   margin-bottom: 10px;
