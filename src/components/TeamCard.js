@@ -65,10 +65,10 @@ const TeamCardBack = ({ member, onHideDetail }) => (
     onClick={onHideDetail}
     role="button"
   >
-    <div className={styles.de}>
-      <h3>{member.name}</h3>
+    <div>
+      <h3 className={styles["padding-bottom"]}>{member.name}</h3>
       <p>{member.details.title}</p>
-      <p>{member.details.diploma}</p>
+      <p className={styles["padding-bottom"]}>{member.details.diploma}</p>
       <p>{member.details.mail}</p>
       <p>{member.details.mobil}</p>
     </div>
@@ -83,9 +83,34 @@ const TeamCardBack = ({ member, onHideDetail }) => (
   </button>
 );
 
-export default function TeamCard({ member, isOpen, onToggle }) {
+export default function TeamCard({ member }) {
   const [showDetail, setShowDetail] = useState(false);
   const startTouch = useRef();
+  const cardRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting && showDetail) {
+          setShowDetail(false);
+        }
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [showDetail]);
 
   const handleTouchStart = (e) => {
     startTouch.current = e.touches[0].clientX;
@@ -102,11 +127,11 @@ export default function TeamCard({ member, isOpen, onToggle }) {
 
   return (
     <div
+      ref={cardRef}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onClick={onToggle}
       className={`${styles["teamCard__card"]} ${
-        showDetail && isOpen ? styles.showDetail : ""
+        showDetail ? styles.showDetail : ""
       }`}
     >
       <TeamCardFront member={member} onShowDetail={() => setShowDetail(true)} />
