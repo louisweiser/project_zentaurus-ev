@@ -93,7 +93,8 @@ export default function ProjectCard({ project }) {
             </p>
             <Link
               href={`/projekt/${project.domain}`}
-              aria-label={`More info about ${project.name}`}
+              aria-label={`Mehr Infos zu ${project.name}`}
+              role="button"
             >
               <div
                 className={styles["projectCard__button-container"]}
