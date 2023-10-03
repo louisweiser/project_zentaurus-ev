@@ -1,11 +1,7 @@
 import { useSectionRefs } from "@/pages/_app.js";
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
-import {
-  experienceText,
-  actWithAnminmalsText,
-  comminityText,
-} from "../../../public/content/approach.js";
+import { approachData } from "../../../public/content/approach.js";
 
 import styles from "./Approach.module.css";
 
@@ -15,21 +11,14 @@ export default function ApproachContent() {
   return (
     <section id="section3" ref={sectionRefs[3]}>
       <SectionTitle title="Vorgehen" />
-      <Article
-        subtitle="Erfahrung"
-        text={experienceText}
-        colored={true}
-      ></Article>
-      <Article
-        subtitle="Tiere"
-        text={actWithAnminmalsText}
-        colored={true}
-      ></Article>
-      <Article
-        subtitle="Gemeinschaft"
-        text={comminityText}
-        colored={true}
-      ></Article>
+      {approachData.map((article) => (
+        <Article
+          key={article.title}
+          subtitle={article.title}
+          text={article.text}
+          colored={true}
+        />
+      ))}
     </section>
   );
 }
