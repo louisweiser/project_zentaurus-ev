@@ -21,8 +21,8 @@ export default function RoutingHeader() {
         <Image
           src={"/svgs/arrowBack.svg"}
           alt="Go back"
-          width={40}
-          height={40}
+          width={32}
+          height={32}
         />
       </button>
     </header>

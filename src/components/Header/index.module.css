@@ -12,6 +12,8 @@
 
 .header__button {
   position: fixed;
+  display: flex;
+  align-items: center;
   right: 0px;
   top: 0px;
   height: 70px;
@@ -36,5 +38,5 @@
   display: flex;
   padding-left: 20px;
   align-items: center;
-  padding-top: 4px;
+  padding-top: 6px;
 }
