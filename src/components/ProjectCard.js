@@ -91,14 +91,20 @@ export default function ProjectCard({ project }) {
             <p className={styles["projectCard__text--back"]}>
               {project.description}
             </p>
-            <div className={styles["projectCard__button"]}>
-              <Link
-                href={`/projekt/${project.domain}`}
-                aria-label={`More info about ${project.name}`}
+            <Link
+              href={`/projekt/${project.domain}`}
+              aria-label={`More info about ${project.name}`}
+            >
+              <div
+                className={styles["projectCard__button-container"]}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  sessionStorage.setItem("scroll", window.scrollY.toString());
+                }}
               >
                 weitere infos
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
