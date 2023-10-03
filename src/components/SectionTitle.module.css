@@ -9,6 +9,9 @@
 
 @media (min-width: 1024px) {
   .sectionTitle {
-    padding: 100px 300px;
+    font-size: 4rem;
+    padding-bottom: 150px;
+    padding-left: 50px;
+    padding-top: 50px;
   }
 }

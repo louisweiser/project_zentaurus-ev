@@ -30,3 +30,9 @@ export const introductionText = [
   "Jeder Mensch ist einzigartig - ",
   "... voneinander lernen bringt uns in der Gemeinschaft weiter!",
 ];
+
+export const images = [
+  "/images/img_03.jpg",
+  "/images/img_02.jpg",
+  "/images/img_04.jpg",
+];
