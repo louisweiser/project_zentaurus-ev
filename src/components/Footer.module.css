@@ -18,3 +18,7 @@
   position: relative;
   width: 100%;
 }
+
+.footer__link {
+  color: var(--header-text-color);
+}

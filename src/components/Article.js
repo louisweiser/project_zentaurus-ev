@@ -8,7 +8,7 @@ function StringArrayIntoJSX(arrayOfStrings) {
   ));
 }
 
-export default function Article({ title, text, subtitle, colored }) {
+export default function Article({ title, text, colored }) {
   const articleText = StringArrayIntoJSX(text);
 
   return (
@@ -17,12 +17,7 @@ export default function Article({ title, text, subtitle, colored }) {
       aria-labelledby={title ? "article-title" : undefined}
       aria-describedby="article-text"
     >
-      {title && (
-        <h2 className={styles.title} id="article-title">
-          {title}
-        </h2>
-      )}
-      {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
+      {title && <h2 className={styles.title}>{title}</h2>}
       <div className={styles.text} id="article-text">
         {articleText}
       </div>

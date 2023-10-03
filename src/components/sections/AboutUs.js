@@ -20,7 +20,7 @@ export default function AboutUsContent() {
       {aboutUsData.map((article) => (
         <Article
           key={article.id}
-          subtitle={article.title}
+          title={article.title}
           text={article.text}
           colored={true}
         />

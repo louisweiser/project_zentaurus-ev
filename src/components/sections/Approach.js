@@ -14,7 +14,7 @@ export default function ApproachContent() {
       {approachData.map((article) => (
         <Article
           key={article.title}
-          subtitle={article.title}
+          title={article.title}
           text={article.text}
           colored={true}
         />

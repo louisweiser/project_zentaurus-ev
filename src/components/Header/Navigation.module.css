@@ -27,4 +27,5 @@
 
 .navigation__button {
   font-size: 1.5rem;
+  color: var(--header-text-color);
 }
