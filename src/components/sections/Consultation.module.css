@@ -1,12 +1,12 @@
-.section {
-  background-color: #e1eedd;
+.article__container {
+  background-color: var(--background-color);
   padding: 30px 16px;
 }
 
-.list {
+.article__list {
   padding: 20px;
 }
 
-.headline {
+.article__title {
   font-family: "LatoBold";
 }

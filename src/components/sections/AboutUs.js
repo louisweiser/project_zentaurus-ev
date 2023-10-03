@@ -22,12 +22,10 @@ export default function AboutUsContent() {
         />
       ))}
       <article>
-        <h3 className={styles.subtitle}>Das Team</h3>
-        <div className={styles.container}>
-          {teamData.map((member) => (
-            <TeamCard key={member.name} member={member} />
-          ))}
-        </div>
+        <h3 className={styles.title}>Das Team</h3>
+        {teamData.map((member) => (
+          <TeamCard key={member.name} member={member} />
+        ))}
       </article>
     </section>
   );

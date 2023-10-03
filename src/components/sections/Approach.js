@@ -1,9 +1,7 @@
-import { useSectionRefs } from "@/pages/_app.js";
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
+import { useSectionRefs } from "@/pages/_app.js";
 import { approachData } from "../../../public/content/approach.js";
-
-import styles from "./Approach.module.css";
 
 export default function ApproachContent() {
   const sectionRefs = useSectionRefs();

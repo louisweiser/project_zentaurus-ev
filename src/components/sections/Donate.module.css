@@ -1,15 +1,15 @@
-.table {
+.content__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #e1eedd;
+  background-color: var(--background-color);
   padding: 20px;
-  border-top: #183a1d 1px solid;
-  border-bottom: #183a1d 1px solid;
+  border-top: var(--dark-text-color) 1px solid;
+  border-bottom: var(--dark-text-color) 1px solid;
   gap: 10px;
 }
 
-.td {
-  color: #183a1d;
+.content__list-item {
+  color: var(--dark-text-color);
   list-style: none;
 }

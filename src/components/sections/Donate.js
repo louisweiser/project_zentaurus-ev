@@ -12,26 +12,26 @@ export default function DonateContent() {
     <section id="section5" ref={sectionRefs[5]}>
       <SectionTitle title="Spenden" />
       <Article text={bankData.text} colored={true} />
-      <div className={styles.table}>
+      <div className={styles["content__container"]}>
         <ul>
-          <li className={styles.td}>Registergericht:</li>
-          <li className={styles.td}>{bankData.county}</li>
+          <li className={styles["content__list-item"]}>Registergericht:</li>
+          <li className={styles["content__list-item"]}>{bankData.county}</li>
         </ul>
         <ul>
-          <li className={styles.td}>Registernummer:</li>
-          <li className={styles.td}>{bankData.number}</li>
+          <li className={styles["content__list-item"]}>Registernummer:</li>
+          <li className={styles["content__list-item"]}>{bankData.number}</li>
         </ul>
         <ul>
-          <li className={styles.td}>Bank:</li>
-          <li className={styles.td}>{bankData.name}</li>
+          <li className={styles["content__list-item"]}>Bank:</li>
+          <li className={styles["content__list-item"]}>{bankData.name}</li>
         </ul>
         <ul>
-          <li className={styles.td}>IBAN:</li>
-          <li className={styles.td}>{bankData.iban}</li>
+          <li className={styles["content__list-item"]}>IBAN:</li>
+          <li className={styles["content__list-item"]}>{bankData.iban}</li>
         </ul>
         <ul>
-          <li className={styles.td}>BIC:</li>
-          <li className={styles.td}>{bankData.bic}</li>
+          <li className={styles["content__list-item"]}>BIC:</li>
+          <li className={styles["content__list-item"]}>{bankData.bic}</li>
         </ul>
       </div>
     </section>
