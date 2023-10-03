@@ -33,6 +33,30 @@ export default function ProjectCard({ project }) {
     };
   }, []);
 
+  useEffect(() => {
+    const flipBackObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting) {
+          setCardFlipStatus(false);
+        }
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    if (containerReference.current) {
+      flipBackObserver.observe(containerReference.current);
+    }
+
+    return () => {
+      if (containerReference.current) {
+        flipBackObserver.unobserve(containerReference.current);
+      }
+    };
+  }, []);
+
   const handleCardClick = () => {
     setCardFlipStatus(!isCardFlipped);
   };

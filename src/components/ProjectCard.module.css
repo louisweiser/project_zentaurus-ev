@@ -47,7 +47,8 @@
 .projectCard__button {
   position: absolute;
   bottom: 20px;
-  left: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 160px;
   height: 40px;
   background-color: var(--dark-text-color);
