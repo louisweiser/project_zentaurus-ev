@@ -88,8 +88,8 @@ export default function ContactContent() {
   return (
     <section id="section6" ref={sectionRefs[6]} className={styles.section}>
       <SectionTitle title="Kontakt" />
-      <div className={styles.contact}>
-        <ul className={styles.list}>
+      <div className={styles["contact__container"]}>
+        <ul className={styles["contact__list"]}>
           <li>{contactData.name}</li>
           <li>{contactData.street}</li>
           <li>{contactData.county}</li>

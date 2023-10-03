@@ -2,17 +2,18 @@
   margin-bottom: 120px;
 }
 
-.contact {
-  background-color: #e1eedd;
+.contact__container {
+  background-color: var(--background-color);
   padding: 20px;
 }
 
-.list {
+.contact__list {
   list-style: none;
   margin-bottom: 10px;
 }
 
 .map {
-  border-top: #183a1d 1px solid;
-  border-bottom: #183a1d 1px solid;
+  z-index: 1;
+  border-top: var(--dark-text-color) 1px solid;
+  border-bottom: var(--dark-text-color) 1px solid;
 }
