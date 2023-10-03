@@ -11,6 +11,10 @@
   z-index: 20;
 }
 
+.navigation.initial {
+  transform: translateY(-100%);
+}
+
 .navigation.visible {
   transform: translateY(0);
 }

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { headlines } from "../../../public/content/sections.js";
 import styles from "./Navigation.module.css";
 
@@ -5,6 +7,12 @@ export default function NavigationMenu({
   isNavigationVisible,
   onClickHandler,
 }) {
+  const [isInitialRender, setIsInitialRender] = useState(true);
+
+  useEffect(() => {
+    setIsInitialRender(false);
+  }, []);
+
   const scrollToIntendedSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,8 +24,8 @@ export default function NavigationMenu({
   return (
     <nav
       className={`${styles.navigation} ${
-        isNavigationVisible ? styles.visible : ""
-      }`}
+        isInitialRender ? styles.initial : ""
+      } ${isNavigationVisible ? styles.visible : ""}`}
       aria-hidden={!isNavigationVisible}
     >
       <ul className={styles.navigation__list}>
