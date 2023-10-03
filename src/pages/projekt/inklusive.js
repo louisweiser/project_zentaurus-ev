@@ -3,7 +3,7 @@ import RoutingHeader from "@/components/Header/RoutingHeader";
 
 import { projectData } from "../../../public/content/project";
 
-import styles from "../index.module.css";
+import styles from "../../styles/pages.module.css";
 
 export default function beratung() {
   return (

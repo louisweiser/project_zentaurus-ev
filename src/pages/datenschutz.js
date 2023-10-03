@@ -3,7 +3,7 @@ import RoutingHeader from "@/components/Header/RoutingHeader.js";
 
 import { dataProtectionData } from "../../public/content/datenschutz.js";
 
-import styles from "./index.module.css";
+import styles from "../styles/pages.module.css";
 
 export default function Datenschutz() {
   return (

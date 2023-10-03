@@ -2,7 +2,7 @@ import Article from "@/components/Article.js";
 import RoutingHeader from "@/components/Header/RoutingHeader.js";
 import { impressumData } from "../../public/content/impressum.js";
 
-import styles from "./index.module.css";
+import styles from "../styles/pages.module.css";
 
 export default function Impressum() {
   const impressum = impressumData.impressum;
