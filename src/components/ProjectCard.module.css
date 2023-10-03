@@ -82,3 +82,12 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
+@media (min-width: 1024px) {
+  .projectCard__card {
+    height: 600px;
+  }
+  .projectCard__image-container {
+    height: 530px;
+  }
+}

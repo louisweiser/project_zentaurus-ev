@@ -14,3 +14,9 @@
 .coloredBackground {
   background-color: #e1eedd;
 }
+
+@media (min-width: 1024px) {
+  .article {
+    padding: 0 300px;
+  }
+}

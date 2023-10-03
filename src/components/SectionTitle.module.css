@@ -6,3 +6,9 @@
   font-weight: 700;
   color: var(--accent-color);
 }
+
+@media (min-width: 1024px) {
+  .sectionTitle {
+    padding: 100px 300px;
+  }
+}

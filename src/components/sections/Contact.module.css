@@ -17,3 +17,12 @@
   border-top: var(--dark-text-color) 1px solid;
   border-bottom: var(--dark-text-color) 1px solid;
 }
+
+@media (min-width: 1024px) {
+  .contact__container {
+    padding: 30px 316px;
+  }
+  .map {
+    padding: 0 300px;
+  }
+}

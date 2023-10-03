@@ -13,3 +13,9 @@
   color: var(--dark-text-color);
   list-style: none;
 }
+
+@media (min-width: 1024px) {
+  .content__container {
+    padding: 30px 316px;
+  }
+}

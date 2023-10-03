@@ -6,6 +6,8 @@ import SectionTitle from "../SectionTitle";
 import { useSectionRefs } from "@/pages/_app.js";
 import { projectData } from "../../../public/content/project";
 
+import styles from "./Projects.module.css";
+
 export default function ProjectsContent() {
   const sectionRefs = useSectionRefs();
 
@@ -27,11 +29,13 @@ export default function ProjectsContent() {
   return (
     <section id="section4" ref={sectionRefs[4]}>
       <SectionTitle title="Projekte" />
-      {projectData.map((project, index) => (
-        <article key={index}>
-          <ProjectCard project={project} />
-        </article>
-      ))}
+      <div className={styles["project-container"]}>
+        {projectData.map((project, index) => (
+          <article key={index}>
+            <ProjectCard project={project} />
+          </article>
+        ))}{" "}
+      </div>
     </section>
   );
 }
