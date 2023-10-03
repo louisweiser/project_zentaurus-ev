@@ -12,3 +12,9 @@
   height: 100%;
   background-color: var(--accent-color);
 }
+
+@media (min-width: 1024px) {
+  .progress-bar__container {
+    display: none;
+  }
+}

@@ -27,3 +27,9 @@
     opacity: 0;
   }
 }
+
+@media (min-width: 1024px) {
+  .headline {
+    display: none;
+  }
+}

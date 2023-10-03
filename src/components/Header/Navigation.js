@@ -8,6 +8,23 @@ export default function NavigationMenu({
   onClickHandler,
 }) {
   const [isInitialRender, setIsInitialRender] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  let scrollPosition = 7;
+  if (isDesktop) {
+    scrollPosition = -90;
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setIsInitialRender(false);
@@ -17,7 +34,7 @@ export default function NavigationMenu({
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetTop = element.offsetTop;
-      window.scrollTo({ top: offsetTop + 7, behavior: "smooth" });
+      window.scrollTo({ top: offsetTop + scrollPosition, behavior: "smooth" });
     }
   };
 
