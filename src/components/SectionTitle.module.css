@@ -1,8 +1,8 @@
-.title {
+.sectionTitle {
   font-size: 2.3rem;
   height: 70px;
   margin-left: 20px;
   font-family: "Merriweather";
   font-weight: 700;
-  color: #f0a04b;
+  color: var(--accent-color);
 }
