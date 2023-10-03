@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import LinkContainer from "../LinkContainer";
+import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
 import { useSectionRefs } from "@/pages/_app.js";
 import { projectData } from "../../../public/content/project";
@@ -29,7 +29,7 @@ export default function ProjectsContent() {
       <SectionTitle title="Projekte" />
       {projectData.map((project, index) => (
         <article key={index}>
-          <LinkContainer project={project} />
+          <ProjectCard project={project} />
         </article>
       ))}
     </section>
