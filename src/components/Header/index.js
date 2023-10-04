@@ -27,6 +27,7 @@ export default function Header() {
           onClick={scrollToSection("section0")}
           aria-label="Go to Beginning"
           role="button"
+          className={styles["header__button-logo"]}
         >
           <Image
             src={"/images/logo.png"}

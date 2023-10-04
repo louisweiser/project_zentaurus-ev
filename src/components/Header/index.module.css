@@ -45,4 +45,7 @@
   .header__button {
     display: none;
   }
+  .header__button-logo {
+    margin-left: 70px;
+  }
 }

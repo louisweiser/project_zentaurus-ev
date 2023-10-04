@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
 
 import styles from "./TeamCard.module.css";
 
 const TeamCardFront = ({ member, onShowDetail }) => {
   const frontCardRef = useRef();
+  const { device } = useDevice();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,7 +47,7 @@ const TeamCardFront = ({ member, onShowDetail }) => {
           className={styles["teamCard__image"]}
           priority
         />
-        <p>{member.name}</p>
+        {device === MOBIL && <p>{member.name}</p>}
         <Image
           src="/svgs/chevronRight.svg"
           alt="open details"
