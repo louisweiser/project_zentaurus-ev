@@ -16,7 +16,7 @@ export default function AboutUsContent() {
   const { device } = useDevice();
 
   const desktopVersion = (
-    <div className={styles.container}>
+    <div className={styles["grid-container"]}>
       {aboutUsData.map((article, index) => (
         <React.Fragment key={article.id}>
           {index % 2 === 0 ? (

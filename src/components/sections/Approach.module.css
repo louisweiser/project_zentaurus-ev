@@ -1,1 +1,16 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
 
+.image {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  object-fit: cover;
+  object-fit: center;
+  height: calc(100vh - 70px);
+}

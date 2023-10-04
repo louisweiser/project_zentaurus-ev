@@ -20,3 +20,9 @@ export const approachData = [
     ],
   },
 ];
+
+export const images = [
+  "/images/img_05.jpg",
+  "/images/img_06.jpg",
+  "/images/img_04.jpg",
+];
