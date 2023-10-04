@@ -3,8 +3,7 @@ import "leaflet/dist/leaflet.css";
 
 import SectionTitle from "../SectionTitle.js";
 import { contactData } from "../../../public/content/contact";
-import { useSectionRefs } from "@/pages/_app.js";
-
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import styles from "./Contact.module.css";
 
 export default function ContactContent() {

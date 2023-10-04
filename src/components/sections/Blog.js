@@ -1,7 +1,6 @@
 import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
-import { useSectionRefs } from "@/pages/_app.js";
-
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 export default function BlogContent() {
   const sectionRefs = useSectionRefs();
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Article from "../Article.js";
 import TeamCard from "../TeamCard.js";
 import SectionTitle from "../SectionTitle.js";
-import { useSectionRefs } from "@/pages/_app.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { aboutUsData, images } from "../../../public/content/aboutus.js";
 import { teamData } from "../../../public/content/team.js";
 

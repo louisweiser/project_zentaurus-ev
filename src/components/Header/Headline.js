@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-import { SectionRefsContext } from "@/pages/_app";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 
 import styles from "./Headline.module.css";
 
@@ -19,7 +19,7 @@ export default function Headline() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
 
-  const sectionRefs = useContext(SectionRefsContext);
+  const sectionRefs = useSectionRefs();
 
   const currentSectionRef = useRef(currentSection);
 

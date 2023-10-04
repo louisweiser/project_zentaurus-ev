@@ -1,5 +1,5 @@
 import ImageSlider from "@/components/ImageSlider";
-import { useSectionRefs } from "@/pages/_app.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { introductionText } from "../../../public/content/aboutus.js";
 
 import styles from "./Introduction.module.css";

@@ -1,4 +1,4 @@
-import { useSectionRefs } from "@/pages/_app.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import SectionTitle from "../SectionTitle.js";
 import { counselingData } from "../../../public/content/counseling.js";
 

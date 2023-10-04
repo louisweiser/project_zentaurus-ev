@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
-import { useSectionRefs } from "@/pages/_app.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { projectData } from "../../../public/content/project";
 
 import styles from "./Projects.module.css";

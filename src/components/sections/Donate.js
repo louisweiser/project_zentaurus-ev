@@ -1,8 +1,7 @@
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
 import { bankData } from "../../../public/content/contact";
-import { useSectionRefs } from "@/pages/_app.js";
-
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import styles from "./Donate.module.css";
 
 export default function DonateContent() {

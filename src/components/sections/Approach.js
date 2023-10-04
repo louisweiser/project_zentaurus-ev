@@ -1,6 +1,6 @@
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
-import { useSectionRefs } from "@/pages/_app.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { approachData } from "../../../public/content/approach.js";
 
 export default function ApproachContent() {
