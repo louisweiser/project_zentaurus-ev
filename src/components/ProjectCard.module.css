@@ -84,10 +84,10 @@
 }
 
 @media (min-width: 1024px) {
-  .projectCard__card {
-    height: 600px;
-  }
   .projectCard__image-container {
-    height: 530px;
+    height: 230px;
+  }
+  .projectCard__container {
+    width: 400px;
   }
 }

@@ -34,7 +34,7 @@ export default function ProjectsContent() {
           <article key={index}>
             <ProjectCard project={project} />
           </article>
-        ))}{" "}
+        ))}
       </div>
     </section>
   );
