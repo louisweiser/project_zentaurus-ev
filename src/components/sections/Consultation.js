@@ -1,3 +1,5 @@
+import Image from "next/image.js";
+
 import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import SectionTitle from "../SectionTitle.js";
 import { counselingData } from "../../../public/content/counseling.js";
@@ -19,9 +21,18 @@ export default function ConsultationContent() {
   ));
 
   return (
-    <section id="section2" ref={sectionRefs[2]}>
+    <section id="section2" ref={sectionRefs[2]} className={styles.section}>
       <SectionTitle title="Beratung" />
       <div className={styles["article__container"]}>{content}</div>
+      <div className={styles["image-container"]}>
+        <Image
+          src={"/images/illustration_01.png"}
+          alt={"Illustration"}
+          width={500}
+          height={300}
+          style={{ objectFit: "cover" }}
+        ></Image>
+      </div>
     </section>
   );
 }

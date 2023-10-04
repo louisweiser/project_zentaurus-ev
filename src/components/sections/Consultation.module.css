@@ -11,8 +11,21 @@
   font-family: "LatoBold";
 }
 
+.image-container {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .article__container {
     padding: 30px 66px;
+  }
+  .image-container {
+    display: block;
+    position: absolute;
+    right: 120px;
+    top: 220px;
+  }
+  .section {
+    position: relative;
   }
 }
