@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
+import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
 
 import Article from "../Article.js";
 import TeamCard from "../TeamCard.js";
 import SectionTitle from "../SectionTitle.js";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { aboutUsData, images } from "../../../public/content/aboutus.js";
 import { teamData } from "../../../public/content/team.js";
 
@@ -12,27 +13,7 @@ import styles from "./AboutUs.module.css";
 
 export default function AboutUsContent() {
   const sectionRefs = useSectionRefs();
-
-  const [isDesktop, setIsDesktop] = useState(null);
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      setIsDesktop(true);
-    } else {
-      setIsDesktop(false);
-    }
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsDesktop(true);
-      } else {
-        setIsDesktop(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { device } = useDevice();
 
   const desktopVersion = (
     <div className={styles.container}>
@@ -94,8 +75,8 @@ export default function AboutUsContent() {
   return (
     <section id="section1" ref={sectionRefs[1]}>
       <SectionTitle title="Über Uns" />
-      {isDesktop && isDesktop !== null && desktopVersion}
-      {!isDesktop && isDesktop !== null && mobileVersion}
+      {device === DESKTOP && desktopVersion}
+      {device === MOBIL && mobileVersion}
       <article>
         <h3 className={styles.title}>Das Team</h3>
         <div className={styles["team-container"]}>

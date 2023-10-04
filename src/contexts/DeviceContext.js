@@ -3,13 +3,17 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const DeviceContext = createContext();
 
 export const DeviceProvider = ({ children }) => {
-  const [isMobile, setIsMobile] = useState(null);
+  const [device, setDevice] = useState(null);
   const [innerWidth, setWidth] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
-      setIsMobile(window.innerWidth <= 1024);
+      if (window.innerWidth <= 1024) {
+        setDevice("mobile");
+      } else {
+        setDevice("desktop");
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -20,7 +24,7 @@ export const DeviceProvider = ({ children }) => {
   }, []);
 
   return (
-    <DeviceContext.Provider value={{ isMobile, innerWidth }}>
+    <DeviceContext.Provider value={{ device, innerWidth }}>
       {children}
     </DeviceContext.Provider>
   );
@@ -33,3 +37,6 @@ export const useDevice = () => {
   }
   return context;
 };
+
+export const MOBIL = "mobile";
+export const DESKTOP = "desktop";

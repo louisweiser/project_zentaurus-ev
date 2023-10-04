@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
 
 import { headlines } from "../../../public/content/sections.js";
 import styles from "./Navigation.module.css";
@@ -8,23 +9,9 @@ export default function NavigationMenu({
   onClickHandler,
 }) {
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const { device } = useDevice();
 
-  let scrollPosition = 7;
-  if (isDesktop) {
-    scrollPosition = -90;
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const scrollPosition = device === MOBIL ? 7 : -90;
 
   useEffect(() => {
     setIsInitialRender(false);
