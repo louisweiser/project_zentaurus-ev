@@ -11,8 +11,8 @@
 @media (min-width: 1024px) {
   .image {
     width: 50vw;
-    display: flex; /* Damit wir das Bild innerhalb des div zentrieren können */
-    justify-content: center; /* Zentriert das Bild horizontal */
+    display: flex;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
     object-fit: cover;
@@ -24,5 +24,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    padding-top: 100px;
+  }
+
+  .team-container {
+    display: flex;
   }
 }

@@ -14,22 +14,17 @@ export default function AboutUsContent() {
   const sectionRefs = useSectionRefs();
 
   const [isDesktop, setIsDesktop] = useState(null);
-  console.log("initial");
   useEffect(() => {
     if (window.innerWidth >= 1024) {
       setIsDesktop(true);
-      console.log("set true");
     } else {
       setIsDesktop(false);
-      console.log("set true");
     }
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setIsDesktop(true);
-        console.log("set true");
       } else {
         setIsDesktop(false);
-        console.log("set true");
       }
     };
 
@@ -103,9 +98,11 @@ export default function AboutUsContent() {
       {!isDesktop && isDesktop !== null && mobileVersion}
       <article>
         <h3 className={styles.title}>Das Team</h3>
-        {teamData.map((member) => (
-          <TeamCard key={member.name} member={member} />
-        ))}
+        <div className={styles["team-container"]}>
+          {teamData.map((member) => (
+            <TeamCard key={member.name} member={member} />
+          ))}
+        </div>
       </article>
     </section>
   );
