@@ -18,6 +18,7 @@
 @media (min-width: 1024px) {
   .article__container {
     padding: 30px 66px;
+    margin-bottom: 200px;
   }
   .image-container {
     display: block;
