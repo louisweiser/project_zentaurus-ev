@@ -14,8 +14,20 @@
   list-style: none;
 }
 
+.grid-container {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .content__container {
-    padding: 30px 316px;
+    padding: 60px;
+    border: none;
+    border-left: var(--dark-text-color) 1px solid;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    justify-content: left;
   }
 }
