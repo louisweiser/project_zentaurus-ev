@@ -14,10 +14,6 @@
   list-style: none;
 }
 
-.grid-container {
-  display: none;
-}
-
 @media (min-width: 1024px) {
   .content__container {
     padding: 60px;

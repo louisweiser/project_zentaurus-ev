@@ -19,10 +19,23 @@
 }
 
 @media (min-width: 1024px) {
-  .contact__container {
-    padding: 30px 316px;
+  .container-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
   }
   .map {
     padding: 0 300px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .map {
+    border: none;
+    border-left: var(--dark-text-color) 1px solid;
   }
 }
