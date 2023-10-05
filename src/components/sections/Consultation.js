@@ -30,7 +30,6 @@ export default function ConsultationContent() {
           alt={"Illustration"}
           width={500}
           height={300}
-          style={{ objectFit: "cover" }}
         ></Image>
       </div>
     </section>
