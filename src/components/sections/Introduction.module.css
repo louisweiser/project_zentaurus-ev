@@ -32,3 +32,25 @@
     transform: translateY(0);
   }
 }
+
+.image {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .image {
+    display: block;
+    position: absolute;
+    right: 100px;
+    top: 0;
+  }
+  .article__container {
+    position: relative;
+  }
+  .article__list {
+    width: 40vw;
+    background-color: none;
+    box-shadow: none;
+    margin-left: 100px;
+  }
+}

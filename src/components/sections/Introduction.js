@@ -1,3 +1,5 @@
+import Image from "next/image.js";
+
 import ImageSlider from "@/components/ImageSlider";
 import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { introductionText } from "../../../public/content/aboutus.js";
@@ -16,6 +18,14 @@ export default function IntroductionContent() {
           <li>{introductionText[1]}</li>
           <li>{introductionText[2]}</li>
         </ul>
+        <div className={styles.image}>
+          <Image
+            src={"/images/illustration_02.png"}
+            alt="image"
+            width={450}
+            height={450}
+          ></Image>
+        </div>
       </article>
     </section>
   );
