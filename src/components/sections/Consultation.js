@@ -1,6 +1,7 @@
 import Image from "next/image.js";
-
 import { useSectionRefs } from "@/contexts/SectionRefsContext";
+import { useDevice } from "@/contexts/DeviceContext.js";
+
 import SectionTitle from "../SectionTitle.js";
 import { counselingData } from "../../../public/content/counseling.js";
 
@@ -8,6 +9,11 @@ import styles from "./Consultation.module.css";
 
 export default function ConsultationContent() {
   const sectionRefs = useSectionRefs();
+  const { innerWidth } = useDevice();
+
+  if (!innerWidth) {
+    return;
+  }
 
   const content = counselingData.map((object) => (
     <article key={object.title}>
@@ -28,8 +34,8 @@ export default function ConsultationContent() {
         <Image
           src={"/images/illustration_01.png"}
           alt={"Illustration"}
-          width={500}
-          height={300}
+          width={innerWidth / 3}
+          height={innerWidth / 5}
         ></Image>
       </div>
     </section>

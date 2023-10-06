@@ -17,7 +17,7 @@
     overflow: hidden;
     object-fit: cover;
     object-fit: center;
-    height: calc(100vh - 70px);
+    height: calc(100vw / 2);
   }
 
   .grid-container {

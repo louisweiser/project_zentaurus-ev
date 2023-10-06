@@ -10,8 +10,8 @@
 @media (min-width: 1024px) {
   .sectionTitle {
     font-size: 4rem;
-    padding-bottom: 150px;
+    padding-bottom: 2em;
     padding-left: 50px;
-    padding-top: 50px;
+    padding-top: 2em;
   }
 }

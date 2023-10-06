@@ -51,7 +51,7 @@
     padding-left: calc(0.25 * 100vw);
   }
   .navigation__button {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .navigation__button:hover {
     color: var(--background-color);

@@ -11,7 +11,11 @@ import styles from "./Approach.module.css";
 
 export default function ApproachContent() {
   const sectionRefs = useSectionRefs();
-  const { device } = useDevice();
+  const { device, innerWidth } = useDevice();
+
+  if (!innerWidth) {
+    return;
+  }
 
   const desktopVersion = (
     <div className={styles["grid-container"]}>
@@ -29,8 +33,8 @@ export default function ApproachContent() {
                 <Image
                   src={images[index]}
                   alt={`Image ${index}`}
-                  width={1000}
-                  height={800}
+                  width={innerWidth / 2}
+                  height={innerWidth / 2}
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -41,8 +45,8 @@ export default function ApproachContent() {
                 <Image
                   src={images[index]}
                   alt={`Image ${index}`}
-                  width={1000}
-                  height={800}
+                  width={innerWidth / 2}
+                  height={innerWidth / 2}
                   style={{ objectFit: "cover" }}
                 />
               </div>
