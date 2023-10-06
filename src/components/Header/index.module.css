@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  height: 70px;
+  height: 4rem;
   width: 100%;
   z-index: 10;
 }
@@ -16,7 +16,7 @@
   align-items: center;
   right: 0px;
   top: 0px;
-  height: 70px;
+  height: 4rem;
   z-index: 300;
 }
 
@@ -45,7 +45,10 @@
   .header__button {
     display: none;
   }
+  .header__content {
+    padding-left: calc(0.06 * 100vw);
+  }
   .header__button-logo {
-    margin-left: 70px;
+    z-index: 100;
   }
 }

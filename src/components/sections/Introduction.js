@@ -1,13 +1,17 @@
 import Image from "next/image.js";
+import { useDevice } from "@/contexts/DeviceContext.js";
+import { useSectionRefs } from "@/contexts/SectionRefsContext";
 
 import ImageSlider from "@/components/ImageSlider";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { introductionText } from "../../../public/content/aboutus.js";
 
 import styles from "./Introduction.module.css";
 
 export default function IntroductionContent() {
   const sectionRefs = useSectionRefs();
+  const { innerWidth } = useDevice();
+
+  const logoSize = Math.floor(innerWidth / 4);
 
   return (
     <section id="section0" ref={sectionRefs[0]} className={styles["section"]}>
@@ -28,8 +32,8 @@ export default function IntroductionContent() {
           <Image
             src={"/images/logo.png"}
             alt="union-logo"
-            width={350}
-            height={350}
+            width={logoSize}
+            height={logoSize}
             loading={"eager"}
           />
         </div>

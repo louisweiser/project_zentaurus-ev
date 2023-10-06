@@ -32,8 +32,8 @@ export default function Header() {
           <Image
             src={"/images/logo.png"}
             alt="union-logo"
-            height={64}
-            width={64}
+            height={54}
+            width={54}
           />
         </button>
         <Headline />
