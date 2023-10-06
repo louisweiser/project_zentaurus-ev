@@ -11,7 +11,7 @@ export default function IntroductionContent() {
   const sectionRefs = useSectionRefs();
   const { innerWidth } = useDevice();
 
-  const logoSize = Math.floor(innerWidth / 4);
+  const logoSize = Math.floor(innerWidth / 5);
 
   return (
     <section id="section0" ref={sectionRefs[0]} className={styles["section"]}>
@@ -28,16 +28,26 @@ export default function IntroductionContent() {
             {introductionText[2]}
           </li>
         </ul>
-        <div className={styles.image}>
-          <Image
-            src={"/images/logo.png"}
-            alt="union-logo"
-            width={logoSize}
-            height={logoSize}
-            loading={"eager"}
-          />
-        </div>
       </article>
+      <div className={styles.image}>
+        <Image
+          src={"/images/logo.png"}
+          alt="union-logo"
+          width={logoSize}
+          height={logoSize}
+          loading={"eager"}
+        />
+      </div>
+      <div className={styles.svg}>
+        {innerWidth && (
+          <Image
+            src={"/svgs/background.svg"}
+            alt={"background"}
+            width={innerWidth}
+            height={innerWidth / 5}
+          ></Image>
+        )}
+      </div>
     </section>
   );
 }
