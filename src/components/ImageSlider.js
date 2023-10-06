@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useDevice } from "@/contexts/DeviceContext.js";
+
 import styles from "./ImageSlider.module.css";
 
 const IMAGES = [
@@ -18,6 +20,8 @@ const AUTO_SLIDE_TRANSITION_DELAY = 1000;
 const SWIPE_TRANSITION_DELAY = 200;
 
 export default function ImageSlider() {
+  const { innerWidth } = useDevice();
+
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
@@ -26,6 +30,16 @@ export default function ImageSlider() {
   );
 
   const length = IMAGES.length;
+
+  const height = Math.floor(0.19270833333333334 * innerWidth);
+  const calculateHeight = () => {
+    if (height < 270) {
+      return 270;
+    } else {
+      return height;
+    }
+  };
+  const imageHeight = calculateHeight();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,6 +82,7 @@ export default function ImageSlider() {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       aria-live="polite"
+      style={{ height: imageHeight + 1 }}
     >
       <div className={styles["image-slider__container"]}>
         {IMAGES.map((src, index) => (
@@ -82,13 +97,17 @@ export default function ImageSlider() {
             aria-hidden={index !== current}
           >
             <div className={styles["image-slider__image-wrapper"]}>
-              <Image
-                src={src}
-                alt={`Slide image ${index + 1}`}
-                fill={true}
-                style={{ objectFit: "cover" }}
-                loading={"eager"}
-              />
+              {imageHeight && innerWidth && (
+                <Image
+                  src={src}
+                  alt={`Slide image ${index + 1}`}
+                  width={innerWidth}
+                  height={imageHeight}
+                  style={{ objectFit: "cover" }}
+                  loading={"eager"}
+                />
+              )}
+
               <div className={styles["image-slider__overlay"]}></div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
 
 import { headlines } from "../../../public/content/sections.js";
 import styles from "./Navigation.module.css";
