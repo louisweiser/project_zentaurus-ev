@@ -41,7 +41,7 @@
   .image {
     display: block;
     position: absolute;
-    right: 100px;
+    right: 8vw;
     top: 0;
   }
   .article__container {
@@ -51,6 +51,12 @@
     width: 40vw;
     background-color: none;
     box-shadow: none;
-    margin-left: 100px;
+    margin-left: 17vw;
+    margin-top: 30px;
+  }
+  .aricle__list-item {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-size: 1.4rem;
   }
 }
