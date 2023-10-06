@@ -14,16 +14,22 @@ export default function IntroductionContent() {
       <ImageSlider />
       <article className={styles["article__container"]}>
         <ul className={styles["article__list"]}>
-          <li className={styles["aricle__list-item"]}>{introductionText[0]}</li>
-          <li className={styles["aricle__list-item"]}>{introductionText[1]}</li>
-          <li className={styles["aricle__list-item"]}>{introductionText[2]}</li>
+          <li className={styles["article__list-item"]}>
+            {introductionText[0]}
+          </li>
+          <li className={styles["article__list-item"]}>
+            {introductionText[1]}
+          </li>
+          <li className={styles["article__list-item"]}>
+            {introductionText[2]}
+          </li>
         </ul>
         <div className={styles.image}>
           <Image
-            src={"/images/illustration_02.png"}
-            alt="image"
-            width={450}
-            height={450}
+            src={"/images/logo.png"}
+            alt="union-logo"
+            width={350}
+            height={350}
             loading={"eager"}
           />
         </div>

@@ -46,15 +46,20 @@
   }
   .article__container {
     position: relative;
+    background-image: url("/svgs/background.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .article__list {
     width: 40vw;
-    background-color: none;
     box-shadow: none;
     margin-left: 17vw;
     margin-top: 30px;
+    background-color: transparent;
+    box-shadow: none;
   }
-  .aricle__list-item {
+  .article__list-item {
     font-family: "Merriweather";
     font-weight: 700;
     font-size: 1.4rem;
