@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useDevice } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
 
 import styles from "./ImageSlider.module.css";
 
@@ -20,7 +20,7 @@ const AUTO_SLIDE_TRANSITION_DELAY = 1000;
 const SWIPE_TRANSITION_DELAY = 200;
 
 export default function ImageSlider() {
-  const { innerWidth } = useDevice();
+  const { innerWidth, innerHeight, device } = useDevice();
 
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -31,12 +31,11 @@ export default function ImageSlider() {
 
   const length = IMAGES.length;
 
-  const height = Math.floor(0.19270833333333334 * innerWidth);
   const calculateHeight = () => {
-    if (height < 270) {
-      return 270;
+    if (device === MOBIL) {
+      return Math.floor(innerHeight / 2);
     } else {
-      return height;
+      return Math.floor(innerHeight / 2.3);
     }
   };
   const imageHeight = calculateHeight();

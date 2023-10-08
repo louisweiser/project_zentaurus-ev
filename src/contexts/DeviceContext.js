@@ -5,10 +5,12 @@ const DeviceContext = createContext();
 export const DeviceProvider = ({ children }) => {
   const [device, setDevice] = useState(null);
   const [innerWidth, setWidth] = useState(null);
+  const [innerHeight, setHeight] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
       if (window.innerWidth <= 1024) {
         setDevice("mobile");
       } else {
@@ -24,7 +26,7 @@ export const DeviceProvider = ({ children }) => {
   }, []);
 
   return (
-    <DeviceContext.Provider value={{ device, innerWidth }}>
+    <DeviceContext.Provider value={{ device, innerWidth, innerHeight }}>
       {children}
     </DeviceContext.Provider>
   );
