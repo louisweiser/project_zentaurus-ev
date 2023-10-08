@@ -9,7 +9,7 @@ import { approachData, images } from "../../../public/content/approach.js";
 import styles from "./Approach.module.css";
 
 export default function ApproachContent() {
-  const { device, innerWidth } = useDevice();
+  const { device, innerWidth, innerHeight } = useDevice();
 
   if (!innerWidth) {
     return;
@@ -21,18 +21,20 @@ export default function ApproachContent() {
         <React.Fragment key={index}>
           {index % 2 === 0 ? (
             <>
-              <Article
-                key={article.title}
-                title={article.title}
-                text={article.text}
-                colored={true}
-              />
+              <div className={styles.height}>
+                <Article
+                  key={article.title}
+                  title={article.title}
+                  text={article.text}
+                  colored={true}
+                />
+              </div>
               <div className={styles.image}>
                 <Image
                   src={images[index]}
                   alt={`Image ${index}`}
                   width={innerWidth / 2}
-                  height={innerWidth / 2}
+                  height={innerHeight}
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -44,16 +46,18 @@ export default function ApproachContent() {
                   src={images[index]}
                   alt={`Image ${index}`}
                   width={innerWidth / 2}
-                  height={innerWidth / 2}
+                  height={innerHeight}
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <Article
-                key={article.title}
-                title={article.title}
-                text={article.text}
-                colored={true}
-              />
+              <div className={styles.height}>
+                <Article
+                  key={article.title}
+                  title={article.title}
+                  text={article.text}
+                  colored={true}
+                />
+              </div>
             </>
           )}
         </React.Fragment>

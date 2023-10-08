@@ -17,8 +17,12 @@
 
 @media (min-width: 1024px) {
   .article__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px 66px;
     margin-bottom: 200px;
+    min-height: calc(100vh - 3.9rem);
   }
   .image-container {
     display: block;

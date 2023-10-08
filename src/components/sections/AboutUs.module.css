@@ -9,21 +9,19 @@
 }
 
 @media (min-width: 1024px) {
+  .section {
+    padding: 0;
+  }
+
   .image {
+    height: calc(100vh - 3.9rem);
     width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
-    object-fit: cover;
-    object-fit: center;
-    height: calc(100vw / 2);
   }
 
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: stretch;
   }
 
   .title {
@@ -35,5 +33,12 @@
     display: flex;
     margin-top: 60px;
     margin-bottom: 130px;
+  }
+  .height {
+    height: calc(100vh - 3.9rem);
+    width: 50vw;
+    display: grid;
+    align-items: stretch;
+    overflow-y: auto;
   }
 }

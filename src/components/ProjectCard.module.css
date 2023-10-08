@@ -84,10 +84,14 @@
 }
 
 @media (min-width: 1024px) {
-  .projectCard__image-container {
-    height: 230px;
+  .projectCard__card {
+    height: calc(0.25 * 100vw);
+    width: calc(0.3 * 100vw);
   }
-  .projectCard__container {
-    width: 400px;
+  .projectCard__text--front {
+    height: calc((0.045 * 100vw));
+  }
+  .projectCard__image-container {
+    height: calc((0.25 * 100vw) - (0.045 * 100vw));
   }
 }
