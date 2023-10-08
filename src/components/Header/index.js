@@ -34,6 +34,7 @@ export default function Header() {
             alt="union-logo"
             height={54}
             width={54}
+            priority
           />
         </button>
         <Headline />

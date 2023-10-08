@@ -42,7 +42,7 @@
     display: block;
     position: absolute;
     right: 8vw;
-    top: calc(7rem + 0.19270833333333334 * 100vw);
+    top: calc(6rem + 100vh / 2.3);
   }
   .article__container {
     position: relative;
@@ -52,6 +52,7 @@
     padding-right: 30vw;
     box-shadow: none;
     background: none;
+    gap: 1rem;
   }
   .article__list-item {
     font-family: "Merriweather";

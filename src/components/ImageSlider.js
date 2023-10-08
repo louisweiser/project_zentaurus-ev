@@ -20,7 +20,7 @@ const AUTO_SLIDE_TRANSITION_DELAY = 1000;
 const SWIPE_TRANSITION_DELAY = 200;
 
 export default function ImageSlider() {
-  const { innerWidth, innerHeight, device } = useDevice();
+  const { device, innerWidth, innerHeight } = useDevice();
 
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
