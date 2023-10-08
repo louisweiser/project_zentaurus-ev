@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
 
 import Article from "../Article.js";
@@ -12,7 +11,6 @@ import { teamData } from "../../../public/content/team.js";
 import styles from "./AboutUs.module.css";
 
 export default function AboutUsContent() {
-  const sectionRefs = useSectionRefs();
   const { device, innerWidth } = useDevice();
 
   if (!innerWidth) {
@@ -77,7 +75,7 @@ export default function AboutUsContent() {
   );
 
   return (
-    <section id="section1" ref={sectionRefs[1]}>
+    <section id="section1">
       <SectionTitle title="Über Uns" />
       {device === DESKTOP && desktopVersion}
       {device === MOBIL && mobileVersion}

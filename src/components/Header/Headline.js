@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
+import React, { useState, useEffect } from "react";
 
 import styles from "./Headline.module.css";
 
 const Headlines = [
+  "",
   "Über uns",
   "Beratung",
   "Vorgehen",
@@ -14,77 +13,37 @@ const Headlines = [
 ];
 
 export default function Headline() {
-  const [currentSection, setCurrentSection] = useState(null);
   const [headline, setHeadline] = useState("");
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [timeoutId, setTimeoutId] = useState(null);
-
-  const sectionRefs = useSectionRefs();
-
-  const currentSectionRef = useRef(currentSection);
 
   useEffect(() => {
-    currentSectionRef.current = currentSection;
-  }, [currentSection]);
-
-  function setNewHeadline(newHeadline) {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setTimeout(() => {
-      setHeadline("");
-      setIsAnimating(false);
-    }, 500);
-
-    if (timeoutId) clearTimeout(timeoutId);
-
-    const id = setTimeout(() => {
-      if (newHeadline !== currentSectionRef.current) {
-        setIsAnimating(false);
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setHeadline(Headlines[0]);
         return;
       }
-      const numStr = newHeadline.replace(/\D/g, "");
-      const num = parseInt(numStr, 10);
-      setHeadline(Headlines[num - 1]);
-      setIsAnimating(false);
-    }, 500);
 
-    setTimeoutId(id);
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.boundingClientRect.top <= 0 && entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
-            setNewHeadline(entry.target.id);
+      for (let i = 0; i < Headlines.length; i++) {
+        const section = document.querySelector(`#section${i}`);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 0 && rect.bottom > 0) {
+            setHeadline(Headlines[i]);
+            break;
           }
-        });
-      },
-      { threshold: 0, rootMargin: "0px 0px -100% 0px" }
-    );
+          if (i === 1 && rect.top > 0) {
+            setHeadline(Headlines[0]);
+            break;
+          }
+        }
+      }
+    };
 
-    sectionRefs.forEach((refObj) => {
-      const ref = refObj.current;
-      if (ref) observer.observe(ref);
-    });
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      sectionRefs.forEach((refObj) => {
-        const ref = refObj.current;
-        if (ref) observer.unobserve(ref);
-      });
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [sectionRefs]);
+  }, []);
 
-  return (
-    <h1
-      className={`${styles["headline"]} ${
-        isAnimating ? styles["headline--fadeOut"] : styles["headline--fadeIn"]
-      }`}
-      key={headline}
-    >
-      {headline}
-    </h1>
-  );
+  return <h1 className={styles["headline"]}>{headline}</h1>;
 }

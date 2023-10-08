@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image.js";
 import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
@@ -10,7 +9,6 @@ import { approachData, images } from "../../../public/content/approach.js";
 import styles from "./Approach.module.css";
 
 export default function ApproachContent() {
-  const sectionRefs = useSectionRefs();
   const { device, innerWidth } = useDevice();
 
   if (!innerWidth) {
@@ -77,7 +75,7 @@ export default function ApproachContent() {
   );
 
   return (
-    <section id="section3" ref={sectionRefs[3]}>
+    <section id="section3">
       <SectionTitle title="Vorgehen" />
       {device === DESKTOP && desktopVersion}
       {device === MOBIL && mobileVersion}

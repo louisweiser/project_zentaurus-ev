@@ -1,14 +1,11 @@
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
 import { bankData } from "../../../public/content/contact";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import styles from "./Donate.module.css";
 
 export default function DonateContent() {
-  const sectionRefs = useSectionRefs();
-
   return (
-    <section id="section5" ref={sectionRefs[5]}>
+    <section id="section5">
       <SectionTitle title="Spenden" />
       <div className={styles["grid-container"]}>
         <Article text={bankData.text} colored={true} />

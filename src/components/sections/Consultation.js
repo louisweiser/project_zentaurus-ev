@@ -1,5 +1,4 @@
 import Image from "next/image.js";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import { useDevice } from "@/contexts/DeviceContext.js";
 
 import SectionTitle from "../SectionTitle.js";
@@ -8,7 +7,6 @@ import { counselingData } from "../../../public/content/counseling.js";
 import styles from "./Consultation.module.css";
 
 export default function ConsultationContent() {
-  const sectionRefs = useSectionRefs();
   const { innerWidth } = useDevice();
 
   if (!innerWidth) {
@@ -27,7 +25,7 @@ export default function ConsultationContent() {
   ));
 
   return (
-    <section id="section2" ref={sectionRefs[2]} className={styles.section}>
+    <section id="section2" className={styles.section}>
       <SectionTitle title="Beratung" />
       <div className={styles["article__container"]}>{content}</div>
       <div className={styles["image-container"]}>

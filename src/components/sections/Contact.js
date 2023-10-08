@@ -3,11 +3,9 @@ import "leaflet/dist/leaflet.css";
 
 import SectionTitle from "../SectionTitle.js";
 import { contactData } from "../../../public/content/contact";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 import styles from "./Contact.module.css";
 
 export default function ContactContent() {
-  const sectionRefs = useSectionRefs();
   const mapRef = useRef();
   const mapInstanceRef = useRef();
 
@@ -85,7 +83,7 @@ export default function ContactContent() {
   };
 
   return (
-    <section id="section6" ref={sectionRefs[6]} className={styles.section}>
+    <section id="section6" className={styles.section}>
       <SectionTitle title="Kontakt" />
       <div className={styles["grid-container"]}>
         <div className={styles["container-inner"]}>

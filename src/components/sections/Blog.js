@@ -1,11 +1,8 @@
 import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
-import { useSectionRefs } from "@/contexts/SectionRefsContext";
 export default function BlogContent() {
-  const sectionRefs = useSectionRefs();
-
   return (
-    <section id="section5" ref={sectionRefs[5]}>
+    <section id="section5">
       <SectionTitle title="Blog" />
       <ProjectCard project={{ name: "Unser Blog", image: "/blog.jpg" }} />
     </section>
