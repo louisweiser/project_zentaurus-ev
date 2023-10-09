@@ -42,22 +42,26 @@
     display: block;
     position: absolute;
     right: 8vw;
-    top: calc(6rem + 100vh / 2.3);
+    top: calc(6rem + (100vh / 2.3));
   }
   .article__container {
     position: relative;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
+    height: 25vh;
   }
   .article__list {
     padding-right: 30vw;
     box-shadow: none;
     background: none;
-    gap: 1rem;
+    gap: 2rem;
+    position: absolute;
+    top: 4vh;
+    left: 15vw;
   }
   .article__list-item {
     font-family: "Merriweather";
     font-weight: 700;
-    font-size: 0.3em;
+    font-size: 0.32em;
   }
   .svg {
     display: block;

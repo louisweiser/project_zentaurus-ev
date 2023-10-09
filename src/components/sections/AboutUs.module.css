@@ -17,6 +17,7 @@
     height: calc(100vh - 3.9rem);
     width: 50vw;
     overflow: hidden;
+    max-height: 80vw;
   }
 
   .grid-container {
@@ -37,6 +38,7 @@
   .height {
     height: calc(100vh - 3.9rem);
     width: 50vw;
+    max-height: 80vw;
     display: grid;
     align-items: stretch;
     overflow-y: auto;

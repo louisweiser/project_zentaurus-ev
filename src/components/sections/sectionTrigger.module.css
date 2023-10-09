@@ -1,0 +1,8 @@
+.hilfs-ref {
+  height: 0;
+  width: 100%; /* Optional, nur um sicherzustellen, dass es die volle Breite einnimmt, falls erforderlich. */
+  visibility: visible; /* Wichtig, da display: none oder visibility: hidden es unsichtbar für den IntersectionObserver machen würde. */
+  position: relative; /* Optional, je nachdem, wie Sie es positionieren möchten. */
+  z-index: -1; /* Um sicherzustellen, dass es hinter anderen Inhalten liegt, falls dies erforderlich ist. */
+  pointer-events: none; /* Verhindert, dass das div Mausereignisse aufnimmt, wenn es über anderen Inhalten liegt. */
+}

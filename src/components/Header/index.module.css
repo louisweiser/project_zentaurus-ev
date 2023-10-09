@@ -51,4 +51,7 @@
   .header__button-logo {
     z-index: 100;
   }
+  .header {
+    border-bottom: 1px solid black;
+  }
 }
