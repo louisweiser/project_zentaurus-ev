@@ -47,7 +47,7 @@
   .article__container {
     position: relative;
     background-color: var(--primary-color);
-    height: 25vh;
+    height: 30vh;
   }
   .article__list {
     padding-right: 30vw;

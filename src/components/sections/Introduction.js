@@ -42,7 +42,7 @@ export default function IntroductionContent() {
             src={"/svgs/background.svg"}
             alt={"background"}
             width={innerWidth}
-            height={innerWidth / 5}
+            height={innerWidth / 6}
           ></Image>
         )}
       </div>

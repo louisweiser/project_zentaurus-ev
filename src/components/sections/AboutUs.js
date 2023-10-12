@@ -21,6 +21,7 @@ export default function AboutUsContent() {
   if (device === MOBIL) {
     content = (
       <>
+        <SectionTitle title="Über Uns" />
         {aboutUsData.map((article) => (
           <Article
             key={article.id}
@@ -33,57 +34,75 @@ export default function AboutUsContent() {
     );
   } else {
     content = (
-      <div className={styles["grid-container"]}>
-        {aboutUsData.map((article, index) => (
-          <React.Fragment key={article.id}>
-            {index % 2 === 0 ? (
-              <>
-                <div className={styles.height}>
-                  <Article
-                    title={article.title}
-                    text={article.text}
-                    colored={true}
-                  />
-                </div>
-                <div className={styles.image}>
-                  <Image
-                    src={images[index]}
-                    alt={`Image ${index}`}
-                    width={innerWidth / 2}
-                    height={innerHeight}
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={styles.image}>
-                  <Image
-                    src={images[index]}
-                    alt={`Image ${index}`}
-                    width={innerWidth / 2}
-                    height={innerHeight}
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <div className={styles.height}>
-                  <Article
-                    title={article.title}
-                    text={article.text}
-                    colored={true}
-                  />
-                </div>
-              </>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
+      <>
+        <div
+          style={{
+            background: "#f6c453",
+            position: "relative",
+            paddingBottom: "50px",
+          }}
+        >
+          <Image
+            src={"/svgs/background-reverse.svg"}
+            alt={"background"}
+            width={innerWidth}
+            height={innerWidth / 6}
+          ></Image>{" "}
+          <div style={{ position: "absolute", bottom: 0 }}>
+            <SectionTitle title="Über Uns" />
+          </div>
+        </div>
+        <div className={styles["grid-container"]}>
+          {aboutUsData.map((article, index) => (
+            <React.Fragment key={article.id}>
+              {index % 2 === 0 ? (
+                <>
+                  <div className={styles.height}>
+                    <Article
+                      title={article.title}
+                      text={article.text}
+                      colored={true}
+                    />
+                  </div>
+                  <div className={styles.image}>
+                    <Image
+                      src={images[index]}
+                      alt={`Image ${index}`}
+                      width={innerWidth / 2}
+                      height={innerHeight}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className={styles.image}>
+                    <Image
+                      src={images[index]}
+                      alt={`Image ${index}`}
+                      width={innerWidth / 2}
+                      height={innerHeight}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className={styles.height}>
+                    <Article
+                      title={article.title}
+                      text={article.text}
+                      colored={true}
+                    />
+                  </div>
+                </>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </>
     );
   }
 
   return (
     <section id="section1">
-      <SectionTitle title="Über Uns" />
       {content}
       <article>
         <h3 className={styles.title}>Das Team</h3>

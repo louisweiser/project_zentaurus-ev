@@ -96,3 +96,8 @@ button {
 section {
   margin-bottom: 70px;
 }
+@media (min-width: 1024px) {
+  section {
+    margin-bottom: calc(100vw * 0.2);
+  }
+}

@@ -35,7 +35,7 @@ export default function ImageSlider() {
     if (device === MOBIL) {
       return Math.floor(innerHeight / 2);
     } else {
-      return Math.floor(innerHeight / 2.3);
+      return Math.floor(innerHeight / 2.4);
     }
   };
   const imageHeight = calculateHeight();

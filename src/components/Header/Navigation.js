@@ -9,9 +9,9 @@ export default function NavigationMenu({
   onClickHandler,
 }) {
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const { device } = useDevice();
+  const { device, innerWidth } = useDevice();
 
-  const scrollPosition = device === MOBIL ? 7 : 50;
+  const scrollPosition = device === MOBIL ? 7 : -0.08 * innerWidth;
 
   useEffect(() => {
     setIsInitialRender(false);
