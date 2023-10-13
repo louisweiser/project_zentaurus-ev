@@ -25,18 +25,9 @@
     align-items: center;
     flex-direction: column;
     background-color: var(--background-color);
-  }
-  .map {
-    padding: 0 300px;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
     margin-top: 3em;
   }
   .map {
     border: none;
-    border-left: var(--dark-text-color) 1px solid;
   }
 }

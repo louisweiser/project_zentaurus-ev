@@ -18,7 +18,6 @@
   .content__container {
     padding: 60px;
     border: none;
-    border-left: var(--dark-text-color) 1px solid;
   }
   .grid-container {
     display: grid;

@@ -85,40 +85,38 @@ export default function ContactContent() {
   return (
     <section id="section6" className={styles.section}>
       <SectionTitle title="Kontakt" />
-      <div className={styles["grid-container"]}>
-        <div className={styles["container-inner"]}>
-          <div className={styles["contact__container"]}>
-            <ul className={styles["contact__list"]}>
-              <li>{contactData.name}</li>
-              <li>{contactData.street}</li>
-              <li>{contactData.county}</li>
-              <li>{contactData.postal}</li>
-            </ul>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Telefon:</td>
-                  <td>{contactData.phone}</td>
-                </tr>
-                <tr>
-                  <td>Telefax:</td>
-                  <td>{contactData.fax}</td>
-                </tr>
-                <tr>
-                  <td>E-Mail:</td>
-                  <td>{contactData.mail}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div className={styles["container-inner"]}>
+        <div className={styles["contact__container"]}>
+          <ul className={styles["contact__list"]}>
+            <li>{contactData.name}</li>
+            <li>{contactData.street}</li>
+            <li>{contactData.county}</li>
+            <li>{contactData.postal}</li>
+          </ul>
+          <table>
+            <tbody>
+              <tr>
+                <td>Telefon:</td>
+                <td>{contactData.phone}</td>
+              </tr>
+              <tr>
+                <td>Telefax:</td>
+                <td>{contactData.fax}</td>
+              </tr>
+              <tr>
+                <td>E-Mail:</td>
+                <td>{contactData.mail}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div
-          ref={mapRef}
-          className={styles.map}
-          style={{ width: "100%", height: "400px", cursor: "pointer" }}
-          onClick={handleMapClick}
-        />
       </div>
+      <div
+        ref={mapRef}
+        className={styles.map}
+        style={{ width: "100%", height: "400px", cursor: "pointer" }}
+        onClick={handleMapClick}
+      />
     </section>
   );
 }

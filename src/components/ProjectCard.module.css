@@ -94,4 +94,9 @@
   .projectCard__image-container {
     height: calc((0.25 * 100vw) - (0.045 * 100vw));
   }
+  .projectCard__button-container {
+    font-size: 1rem;
+    width: 13vw;
+    height: 3vw;
+  }
 }
