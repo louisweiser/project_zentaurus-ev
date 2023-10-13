@@ -35,13 +35,7 @@ export default function AboutUsContent() {
   } else {
     content = (
       <>
-        <div
-          style={{
-            marginTop: "200px",
-          }}
-        >
-          <SectionTitle title="Über Uns" />
-        </div>
+        <SectionTitle title="Über Uns" />
         <div className={styles["grid-container"]}>
           {aboutUsData.map((article, index) => (
             <React.Fragment key={article.id}>

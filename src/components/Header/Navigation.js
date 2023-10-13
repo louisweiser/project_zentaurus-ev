@@ -4,14 +4,16 @@ import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
 import { headlines } from "../../../public/content/sections.js";
 import styles from "./Navigation.module.css";
 
+import useCurrentSection from "@/hooks/useCurrentSection";
+
 export default function NavigationMenu({
   isNavigationVisible,
   onClickHandler,
 }) {
   const [isInitialRender, setIsInitialRender] = useState(true);
   const { device, innerWidth } = useDevice();
-
-  const scrollPosition = device === MOBIL ? 7 : -0.09 * innerWidth;
+  const { title, id } = useCurrentSection();
+  const scrollPosition = device === MOBIL ? 7 : 0.11 * innerWidth;
 
   useEffect(() => {
     setIsInitialRender(false);
@@ -42,7 +44,9 @@ export default function NavigationMenu({
                   scrollToIntendedSection(item.ref);
                   onClickHandler();
                 }}
-                className={styles.navigation__button}
+                className={`${styles.navigation__button} ${
+                  item.title === title ? styles.active : ""
+                }`}
                 aria-label={`Go to ${item.title} section`}
               >
                 {item.title}

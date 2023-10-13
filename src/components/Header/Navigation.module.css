@@ -57,3 +57,7 @@
     color: var(--background-color);
   }
 }
+
+.navigation__button.active {
+  color: red;
+}
