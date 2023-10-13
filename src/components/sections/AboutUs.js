@@ -37,20 +37,10 @@ export default function AboutUsContent() {
       <>
         <div
           style={{
-            background: "#f6c453",
-            position: "relative",
-            paddingBottom: "50px",
+            marginTop: "200px",
           }}
         >
-          <Image
-            src={"/svgs/background-reverse.svg"}
-            alt={"background"}
-            width={innerWidth}
-            height={innerWidth / 6}
-          ></Image>{" "}
-          <div style={{ position: "absolute", bottom: 0 }}>
-            <SectionTitle title="Über Uns" />
-          </div>
+          <SectionTitle title="Über Uns" />
         </div>
         <div className={styles["grid-container"]}>
           {aboutUsData.map((article, index) => (

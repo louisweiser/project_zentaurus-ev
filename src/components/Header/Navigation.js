@@ -11,7 +11,7 @@ export default function NavigationMenu({
   const [isInitialRender, setIsInitialRender] = useState(true);
   const { device, innerWidth } = useDevice();
 
-  const scrollPosition = device === MOBIL ? 7 : -0.08 * innerWidth;
+  const scrollPosition = device === MOBIL ? 7 : -0.09 * innerWidth;
 
   useEffect(() => {
     setIsInitialRender(false);
