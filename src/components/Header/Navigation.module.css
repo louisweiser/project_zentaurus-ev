@@ -56,8 +56,25 @@
   .navigation__button:hover {
     color: var(--background-color);
   }
-}
+  .navigation__button {
+    position: relative;
+  }
 
-.navigation__button.active {
-  color: red;
+  .navigation__button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s;
+  }
+
+  .navigation__button.active::after {
+    width: 100%;
+  }
+  .navigation__button.active {
+    color: var(--secondary-color);
+  }
 }
