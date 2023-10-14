@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useDevice, MOBILE } from "@/contexts/DeviceContext.js";
+import { useSectionDetection } from "@/contexts/SectionDetectionContext.js";
 import useCurrentSection from "@/hooks/useCurrentSection";
 
 import { headlines } from "../../../public/content/sections.js";
@@ -10,13 +11,14 @@ export default function NavigationMenu({
   isNavigationVisible,
   onClickHandler,
 }) {
-  const [isInitialRender, setIsInitialRender] = useState(true);
   const { device } = useDevice();
-  const { title, id } = useCurrentSection();
-  const scrollPosition = device === MOBILE ? 7 : 1;
+  const { title } = useCurrentSection();
+  const { sectionDetection, setSectionDetection } = useSectionDetection();
+  const [isInitialRender, setIsInitialRender] = useState(true);
   const [clickedSection, setClickedSection] = useState(null);
-  const [disableSectionDetection, setDisableSectionDetection] = useState(false);
   const sectionDetectionTimeout = useRef(null);
+
+  const scrollPosition = device === MOBILE ? 7 : 1;
 
   useEffect(() => {
     setIsInitialRender(false);
@@ -55,12 +57,12 @@ export default function NavigationMenu({
                   scrollToIntendedSection(item.ref);
                   onClickHandler();
                   setClickedSection(item.title);
-                  setDisableSectionDetection(true);
+                  setSectionDetection(false);
                   if (sectionDetectionTimeout.current) {
                     clearTimeout(sectionDetectionTimeout.current);
                   }
                   sectionDetectionTimeout.current = setTimeout(() => {
-                    setDisableSectionDetection(false);
+                    setSectionDetection(true);
                     setClickedSection(null);
                   }, 800);
                 }}
@@ -69,7 +71,7 @@ export default function NavigationMenu({
                     ? item.title === clickedSection
                       ? styles.active
                       : ""
-                    : !disableSectionDetection && item.title === title
+                    : sectionDetection && item.title === title
                     ? styles.active
                     : ""
                 }`}

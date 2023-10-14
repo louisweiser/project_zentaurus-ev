@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useSectionDetection } from "@/contexts/SectionDetectionContext.js";
 
 import Navigation from "./Navigation.js";
 import ScrollProgressBar from "./ScrollProgressBar.js";
@@ -8,8 +9,10 @@ import Headline from "./Headline.js";
 import styles from "./index.module.css";
 
 export default function Header() {
+  const { setSectionDetection } = useSectionDetection();
   const [isNavigationVisible, setNavigationVisible] = useState(false);
   const [isRotated, setRotated] = useState(false);
+  const sectionDetectionTimeout = useRef(null);
 
   const onClickHandler = () => {
     setNavigationVisible((prev) => !prev);
@@ -17,8 +20,23 @@ export default function Header() {
   };
 
   const scrollToSection = (sectionId) => () => {
+    setSectionDetection(false);
+    if (sectionDetectionTimeout.current) {
+      clearTimeout(sectionDetectionTimeout.current);
+    }
+    sectionDetectionTimeout.current = setTimeout(() => {
+      setSectionDetection(true);
+    }, 800);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    return () => {
+      if (sectionDetectionTimeout.current) {
+        clearTimeout(sectionDetectionTimeout.current);
+      }
+    };
+  }, []);
 
   return (
     <header className={styles.header}>

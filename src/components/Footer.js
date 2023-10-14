@@ -1,12 +1,32 @@
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSectionDetection } from "@/contexts/SectionDetectionContext.js";
 
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { setSectionDetection } = useSectionDetection();
+  const sectionDetectionTimeout = useRef(null);
+
   const scrollToTop = () => {
+    setSectionDetection(false);
+    if (sectionDetectionTimeout.current) {
+      clearTimeout(sectionDetectionTimeout.current);
+    }
+    sectionDetectionTimeout.current = setTimeout(() => {
+      setSectionDetection(true);
+    }, 800);
     document.getElementById("section0")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    return () => {
+      if (sectionDetectionTimeout.current) {
+        clearTimeout(sectionDetectionTimeout.current);
+      }
+    };
+  }, []);
 
   return (
     <footer>
