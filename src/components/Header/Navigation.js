@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBILE } from "@/contexts/DeviceContext.js";
 import useCurrentSection from "@/hooks/useCurrentSection";
 
 import { headlines } from "../../../public/content/sections.js";
@@ -13,7 +13,7 @@ export default function NavigationMenu({
   const [isInitialRender, setIsInitialRender] = useState(true);
   const { device } = useDevice();
   const { title, id } = useCurrentSection();
-  const scrollPosition = device === MOBIL ? 7 : 1;
+  const scrollPosition = device === MOBILE ? 7 : 1;
 
   useEffect(() => {
     setIsInitialRender(false);

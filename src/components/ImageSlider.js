@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBILE } from "@/contexts/DeviceContext.js";
 
 import styles from "./ImageSlider.module.css";
 
@@ -32,7 +32,7 @@ export default function ImageSlider() {
   const length = IMAGES.length;
 
   const calculateHeight = () => {
-    if (device === MOBIL) {
+    if (device === MOBILE) {
       return Math.floor(innerHeight / 2);
     } else {
       return Math.floor(innerHeight / 2.4);

@@ -40,5 +40,5 @@ export const useDevice = () => {
   return context;
 };
 
-export const MOBIL = "mobile";
+export const MOBILE = "mobile";
 export const DESKTOP = "desktop";

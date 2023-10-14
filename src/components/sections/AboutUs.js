@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBILE } from "@/contexts/DeviceContext.js";
 
 import Article from "../Article.js";
 import TeamCard from "../TeamCard";
@@ -18,7 +18,7 @@ export default function AboutUsContent() {
   }
 
   let content = null;
-  if (device === MOBIL) {
+  if (device === MOBILE) {
     content = (
       <>
         <SectionTitle title="Über Uns" />

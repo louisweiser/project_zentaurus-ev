@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image.js";
-import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBILE, DESKTOP } from "@/contexts/DeviceContext.js";
 
 import SectionTitle from "../SectionTitle.js";
 import Article from "../Article";
@@ -82,7 +82,7 @@ export default function ApproachContent() {
     <section id="section3">
       <SectionTitle title="Vorgehen" />
       {device === DESKTOP && desktopVersion}
-      {device === MOBIL && mobileVersion}
+      {device === MOBILE && mobileVersion}
     </section>
   );
 }
