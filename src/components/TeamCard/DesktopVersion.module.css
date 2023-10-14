@@ -1,0 +1,62 @@
+.teamCard__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teamCard__text-container {
+  padding: 0 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.teamCard__image-container {
+  opacity: 0;
+}
+
+.teamCard__image {
+  border-radius: 50%;
+  height: 17em;
+  width: 17em;
+  object-fit: cover;
+  object-position: 50% 0;
+  margin-bottom: 1em;
+}
+
+.padding-bottom {
+  padding-bottom: 1em;
+}
+
+.animate {
+  animation: popIn 1s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(10em);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,13 +1,11 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver.js";
 
-import styles from "./TeamCard.module.css";
+import styles from "./MobileVersion.module.css";
 
 const TeamCardFront = ({ member, onShowDetail }) => {
   const frontCardRef = useRef();
-  const { device } = useDevice();
 
   useIntersectionObserver(
     frontCardRef,
@@ -30,7 +28,7 @@ const TeamCardFront = ({ member, onShowDetail }) => {
           className={styles["teamCard__image"]}
           priority
         />
-        {device === MOBIL && <p>{member.name}</p>}
+        <p>{member.name}</p>
         <Image
           src="/svgs/chevronRight.svg"
           alt="open details"
@@ -64,7 +62,7 @@ const TeamCardBack = ({ member, onHideDetail }) => (
   </button>
 );
 
-export default function TeamCard({ member }) {
+export default function TeamCardForMobile({ member }) {
   const [showDetail, setShowDetail] = useState(false);
   const startTouch = useRef();
   const cardRef = useRef();

@@ -84,30 +84,3 @@
     opacity: 1;
   }
 }
-
-@media (min-width: 1024px) {
-  .teamCard__card {
-    flex-direction: column;
-    height: auto;
-  }
-  .teamCard__card-front,
-  .teamCard__card-back {
-    position: relative;
-    transform: none !important;
-    width: 100%;
-  }
-  .teamCard__icon {
-    display: none;
-  }
-  .teamCard__card-front button,
-  .teamCard__card-back button {
-    pointer-events: none;
-  }
-  .teamCard__image {
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    object-fit: cover;
-    object-position: 50% 0;
-  }
-}

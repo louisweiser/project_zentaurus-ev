@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
 
 import Article from "../Article.js";
-import TeamCard from "../TeamCard.js";
+import TeamCard from "../TeamCard";
 import SectionTitle from "../SectionTitle.js";
 import { aboutUsData, images } from "../../../public/content/aboutus.js";
 import { teamData } from "../../../public/content/team.js";
