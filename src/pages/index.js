@@ -11,25 +11,12 @@ import DonateContent from "@/components/sections/Donate";
 import ContactContent from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
-import Swal from "sweetalert2";
-
 export default function Home() {
   useEffect(() => {
     const scroll = sessionStorage.getItem("scroll");
     if (scroll) {
       window.scrollTo(0, parseInt(scroll));
       sessionStorage.removeItem("scroll");
-    }
-  }, []);
-
-  useEffect(() => {
-    if (window.innerWidth > 1024) {
-      Swal.fire({
-        title: "Info",
-        text: "Die Desktop Version ist in Arbeit. Bald wird sie cooler!",
-        icon: "info",
-        confirmButtonText: "Verstanden",
-      });
     }
   }, []);
 
