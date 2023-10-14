@@ -1,7 +1,7 @@
 @media (min-width: 1024px) {
   .project-container {
-    padding: 30px 30px;
     display: flex;
-    gap: 40px;
+    margin-left: 2.7em;
+    gap: 2em;
   }
 }

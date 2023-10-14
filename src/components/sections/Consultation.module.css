@@ -23,14 +23,12 @@
     padding: 30px 66px;
     min-height: calc(100vh - 3.9rem);
     margin-top: 3em;
+    position: relative;
   }
   .image-container {
     display: block;
     position: absolute;
-    right: 120px;
-    top: 31em;
-  }
-  .section {
-    position: relative;
+    right: 6em;
+    top: 3em;
   }
 }

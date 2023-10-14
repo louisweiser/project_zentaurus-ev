@@ -98,7 +98,7 @@ section {
 }
 @media (min-width: 1024px) {
   section {
-    padding-top: calc(100vw * 0.2);
+    padding-top: 7em;
     margin-bottom: 0;
   }
 }

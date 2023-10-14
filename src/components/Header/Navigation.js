@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
+import useCurrentSection from "@/hooks/useCurrentSection";
 
 import { headlines } from "../../../public/content/sections.js";
-import styles from "./Navigation.module.css";
 
-import useCurrentSection from "@/hooks/useCurrentSection";
+import styles from "./Navigation.module.css";
 
 export default function NavigationMenu({
   isNavigationVisible,
   onClickHandler,
 }) {
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const { device, innerWidth } = useDevice();
+  const { device } = useDevice();
   const { title, id } = useCurrentSection();
-  const scrollPosition = device === MOBIL ? 7 : 0.11 * innerWidth;
+  const scrollPosition = device === MOBIL ? 7 : 1;
 
   useEffect(() => {
     setIsInitialRender(false);

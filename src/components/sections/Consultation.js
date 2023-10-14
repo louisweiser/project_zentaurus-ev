@@ -27,14 +27,16 @@ export default function ConsultationContent() {
   return (
     <section id="section2" className={styles.section}>
       <SectionTitle title="Beratung" />
-      <div className={styles["article__container"]}>{content}</div>
-      <div className={styles["image-container"]}>
-        <Image
-          src={"/images/illustration_01.png"}
-          alt={"Illustration"}
-          width={innerWidth / 3}
-          height={innerWidth / 5}
-        ></Image>
+      <div className={styles["article__container"]}>
+        {content}
+        <div className={styles["image-container"]}>
+          <Image
+            src={"/images/illustration_01.png"}
+            alt={"Illustration"}
+            width={innerWidth / 3}
+            height={innerWidth / 5}
+          ></Image>
+        </div>
       </div>
     </section>
   );

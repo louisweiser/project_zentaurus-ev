@@ -99,4 +99,7 @@
     width: 13vw;
     height: 3vw;
   }
+  .projectCard__container {
+    margin: 0;
+  }
 }

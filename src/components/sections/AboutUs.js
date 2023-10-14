@@ -53,7 +53,7 @@ export default function AboutUsContent() {
                       src={images[index]}
                       alt={`Image ${index}`}
                       width={innerWidth / 2}
-                      height={innerHeight}
+                      height={innerHeight - 60}
                       style={{ objectFit: "cover" }}
                     />
                   </div>
