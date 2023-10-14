@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { useDevice, MOBIL, DESKTOP } from "@/contexts/DeviceContext.js";
+import { useDevice, MOBIL } from "@/contexts/DeviceContext.js";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver.js";
 
 import styles from "./TeamCard.module.css";
 
@@ -8,39 +9,21 @@ const TeamCardFront = ({ member, onShowDetail }) => {
   const frontCardRef = useRef();
   const { device } = useDevice();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.animate);
-        }
-      },
-      {
-        threshold: 0.5,
+  useIntersectionObserver(
+    frontCardRef,
+    (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(styles.animate);
       }
-    );
-
-    if (frontCardRef.current) {
-      observer.observe(frontCardRef.current);
-    }
-
-    return () => {
-      if (frontCardRef.current) {
-        observer.unobserve(frontCardRef.current);
-      }
-    };
-  }, []);
+    },
+    { threshold: 0.5 }
+  );
 
   return (
     <div className={styles.popInWrapper} ref={frontCardRef}>
-      <button
-        className={styles["teamCard__card-front"]}
-        onClick={onShowDetail}
-        role="button"
-      >
+      <button className={styles["teamCard__card-front"]} onClick={onShowDetail}>
         <Image
-          src={"/images" + member.image}
+          src={`/images${member.image}`}
           alt={`Bild von ${member.name}`}
           width={200}
           height={300}
@@ -55,18 +38,14 @@ const TeamCardFront = ({ member, onShowDetail }) => {
           height={24}
           className={`${styles["teamCard__icon"]} ${styles["position-right"]}`}
           priority
-        ></Image>
+        />
       </button>
     </div>
   );
 };
 
 const TeamCardBack = ({ member, onHideDetail }) => (
-  <button
-    className={styles["teamCard__card-back"]}
-    onClick={onHideDetail}
-    role="button"
-  >
+  <button className={styles["teamCard__card-back"]} onClick={onHideDetail}>
     <div>
       <h3 className={styles["padding-bottom"]}>{member.name}</h3>
       <p>{member.details.title}</p>
@@ -81,7 +60,7 @@ const TeamCardBack = ({ member, onHideDetail }) => (
       height={24}
       className={`${styles["teamCard__icon"]} ${styles["position-left"]}`}
       priority
-    ></Image>
+    />
   </button>
 );
 
@@ -90,29 +69,15 @@ export default function TeamCard({ member }) {
   const startTouch = useRef();
   const cardRef = useRef();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting && showDetail) {
-          setShowDetail(false);
-        }
-      },
-      {
-        threshold: 0,
+  useIntersectionObserver(
+    cardRef,
+    (entry) => {
+      if (!entry.isIntersecting && showDetail) {
+        setShowDetail(false);
       }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, [showDetail]);
+    },
+    { threshold: 0 }
+  );
 
   const handleTouchStart = (e) => {
     startTouch.current = e.touches[0].clientX;
