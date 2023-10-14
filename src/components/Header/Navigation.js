@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDevice, MOBILE } from "@/contexts/DeviceContext.js";
 import useCurrentSection from "@/hooks/useCurrentSection";
 
@@ -14,6 +14,9 @@ export default function NavigationMenu({
   const { device } = useDevice();
   const { title, id } = useCurrentSection();
   const scrollPosition = device === MOBILE ? 7 : 1;
+  const [clickedSection, setClickedSection] = useState(null);
+  const [disableSectionDetection, setDisableSectionDetection] = useState(false);
+  const sectionDetectionTimeout = useRef(null);
 
   useEffect(() => {
     setIsInitialRender(false);
@@ -26,6 +29,14 @@ export default function NavigationMenu({
       window.scrollTo({ top: offsetTop + scrollPosition, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    return () => {
+      if (sectionDetectionTimeout.current) {
+        clearTimeout(sectionDetectionTimeout.current);
+      }
+    };
+  }, []);
 
   return (
     <nav
@@ -43,9 +54,24 @@ export default function NavigationMenu({
                 onClick={() => {
                   scrollToIntendedSection(item.ref);
                   onClickHandler();
+                  setClickedSection(item.title);
+                  setDisableSectionDetection(true);
+                  if (sectionDetectionTimeout.current) {
+                    clearTimeout(sectionDetectionTimeout.current);
+                  }
+                  sectionDetectionTimeout.current = setTimeout(() => {
+                    setDisableSectionDetection(false);
+                    setClickedSection(null);
+                  }, 800);
                 }}
                 className={`${styles.navigation__button} ${
-                  item.title === title ? styles.active : ""
+                  clickedSection
+                    ? item.title === clickedSection
+                      ? styles.active
+                      : ""
+                    : !disableSectionDetection && item.title === title
+                    ? styles.active
+                    : ""
                 }`}
                 aria-label={`Go to ${item.title} section`}
               >
