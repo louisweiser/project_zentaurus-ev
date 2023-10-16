@@ -1,13 +1,17 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useDevice } from "@/contexts/DeviceContext";
 import { useSectionDetection } from "@/contexts/SectionDetectionContext.js";
 
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { innerWidth } = useDevice();
   const { setSectionDetection } = useSectionDetection();
   const sectionDetectionTimeout = useRef(null);
+
+  const buttonSize = innerWidth * 0.02 > 30 ? innerWidth * 0.02 : 30;
 
   const scrollToTop = () => {
     setSectionDetection(false);
@@ -50,8 +54,8 @@ export default function Footer() {
             <Image
               src="/svgs/arrowUp.svg"
               alt="Scroll to top"
-              width={30}
-              height={30}
+              width={buttonSize}
+              height={buttonSize}
             />
           </button>
         </li>

@@ -10,13 +10,27 @@
 
 .footer__button {
   position: absolute;
-  bottom: 14px;
-  right: 20px;
+  bottom: 2vw;
+  right: 2vw;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  width: 2vw;
+  height: 2vw;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.footer__button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .footer__item {
   position: relative;
   width: 100%;
+}
+
+.footer__link:hover {
+  color: aliceblue;
 }
 
 .footer__link {
