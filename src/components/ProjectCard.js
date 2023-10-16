@@ -1,65 +1,66 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useDevice, DESKTOP } from "@/contexts/DeviceContext.js";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 import styles from "./ProjectCard.module.css";
 
 export default function ProjectCard({ project }) {
+  const { device } = useDevice();
   const [isCardFlipped, setCardFlipStatus] = useState(false);
-
   const containerReference = useRef();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.animate);
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    if (containerReference.current) {
-      observer.observe(containerReference.current);
-    }
-
-    return () => {
-      if (containerReference.current) {
-        observer.unobserve(containerReference.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const flipBackObserver = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting) {
-          setCardFlipStatus(false);
-        }
-      },
-      {
-        threshold: 0,
-      }
-    );
-
-    if (containerReference.current) {
-      flipBackObserver.observe(containerReference.current);
-    }
-
-    return () => {
-      if (containerReference.current) {
-        flipBackObserver.unobserve(containerReference.current);
-      }
-    };
-  }, []);
-
-  const handleCardClick = () => {
-    setCardFlipStatus(!isCardFlipped);
+  const handleCardFlip = () => {
+    setCardFlipStatus((prev) => !prev);
   };
+
+  const handleMouseOver = () => setCardFlipStatus(true);
+  const handleMouseOut = () => setCardFlipStatus(false);
+
+  const intersectionCallback = (entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add(styles.animate);
+    }
+  };
+
+  const flipBackCallback = (entry) => {
+    if (!entry.isIntersecting) {
+      setCardFlipStatus(false);
+    }
+  };
+
+  useIntersectionObserver(containerReference, intersectionCallback, {
+    threshold: 0.5,
+  });
+
+  useIntersectionObserver(
+    containerReference,
+    (entry) => {
+      if (device !== DESKTOP) {
+        flipBackCallback(entry);
+      }
+    },
+    {
+      threshold: 0,
+    }
+  );
+
+  useEffect(() => {
+    const currentRef = containerReference.current;
+
+    if (device === DESKTOP) {
+      currentRef.addEventListener("mouseover", handleMouseOver);
+      currentRef.addEventListener("mouseout", handleMouseOut);
+    }
+
+    return () => {
+      if (device === DESKTOP) {
+        currentRef.removeEventListener("mouseover", handleMouseOver);
+        currentRef.removeEventListener("mouseout", handleMouseOut);
+      }
+    };
+  }, [device]);
 
   return (
     <div
@@ -67,7 +68,10 @@ export default function ProjectCard({ project }) {
       ref={containerReference}
       role="presentation"
     >
-      <div className={styles["projectCard__card"]} onClick={handleCardClick}>
+      <div
+        className={styles["projectCard__card"]}
+        onClick={device === DESKTOP ? null : handleCardFlip}
+      >
         <div
           className={styles["projectCard__card-inner"]}
           style={{
