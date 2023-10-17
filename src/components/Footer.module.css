@@ -1,3 +1,7 @@
+.footer {
+  position: relative;
+}
+
 .footer__list {
   display: flex;
   flex-direction: column;
@@ -10,8 +14,8 @@
 
 .footer__button {
   position: absolute;
-  bottom: 2vw;
-  right: 2vw;
+  bottom: 1.1em;
+  right: 0.6em;
   border-radius: 50%;
   transition: background-color 0.3s;
   width: 2vw;
@@ -24,15 +28,24 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.footer__item {
-  position: relative;
-  width: 100%;
-}
-
 .footer__link:hover {
   color: aliceblue;
 }
 
 .footer__link {
   color: var(--header-text-color);
+}
+
+@media (min-width: 1042px) {
+  .footer__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+  }
+  .footer__button {
+    transform: translateY(50%);
+    bottom: 50%;
+    right: 2vw;
+  }
 }

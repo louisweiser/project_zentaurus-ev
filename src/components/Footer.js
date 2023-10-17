@@ -33,7 +33,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer>
+    <footer className={styles.footer}>
       <ul className={styles.footer__list}>
         <li className={styles.item}>
           <Link href={"impressum"} className={styles.footer__link}>
@@ -45,21 +45,19 @@ export default function Footer() {
             Datenschutz
           </Link>
         </li>
-        <li className={styles.footer__item}>
-          <button
-            onClick={scrollToTop}
-            className={styles.footer__button}
-            aria-label="Scroll to top"
-          >
-            <Image
-              src="/svgs/arrowUp.svg"
-              alt="Scroll to top"
-              width={buttonSize}
-              height={buttonSize}
-            />
-          </button>
-        </li>
       </ul>
+      <button
+        onClick={scrollToTop}
+        className={styles.footer__button}
+        aria-label="Scroll to top"
+      >
+        <Image
+          src="/svgs/arrowUp.svg"
+          alt="Scroll to top"
+          width={buttonSize}
+          height={buttonSize}
+        />
+      </button>
     </footer>
   );
 }
