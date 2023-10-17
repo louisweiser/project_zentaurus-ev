@@ -30,7 +30,7 @@
 }
 
 .animate {
-  animation: popIn 1s ease-out forwards;
+  animation: popIn 1.2s ease-out forwards;
 }
 
 @keyframes popIn {
@@ -50,8 +50,8 @@
 
 .fadeInUp {
   opacity: 0;
-  transform: translateY(10em);
-  animation: fadeInUp 1s forwards;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s forwards;
 }
 
 @keyframes fadeInUp {
