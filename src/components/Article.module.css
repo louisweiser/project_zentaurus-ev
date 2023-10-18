@@ -17,7 +17,6 @@
 
 @media (min-width: 1024px) {
   .article {
-    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
